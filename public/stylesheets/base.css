@@ -1,0 +1,1311 @@
+/* font-family: myriad-pro, sans-serif;
+Normal e Italic
+
+Light:300
+Regular:400
+Semibold:600
+Bold:700
+
+colores:
+botonera:#9E8D96
+clientes/rosa logo: #F5C1DD
+otro rosa: #ee9fc9
+violeta logo: #83045e
+texto oscuro:#9D8189
+más oscuro:#674e56
+
+color fecha gris claro: #b3acae
+  color autor: #cc869c;
+*/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?uyuq19');
+    src: url('../fonts/icomoon.eot?uyuq19#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?uyuq19') format('truetype'), url('../fonts/icomoon.woff?uyuq19') format('woff'), url('../fonts/icomoon.svg?uyuq19#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: myriad-pro, sans-serif;
+}
+
+/* INICIO HEADER */
+
+
+.holder {
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    padding: 20px 40px 10px;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.maxwidthcontent {
+    max-width: 100%;
+}
+
+/* FIN HEADER */
+
+/* INICIO NAV */
+
+nav {
+    background-color: #9E8D96;
+    width: 100%;
+}
+
+/* .hambu{
+   text-align: center;
+} */
+
+.navcerrado {
+    height: 0;
+}
+
+.navabierto {
+    height: 360px;
+    /* display: contents; */
+}
+
+.botonera {
+    /* class en ul del nav */
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.1em;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+.clientes {
+    background-color: #F5C1DD;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
+    transition: all 0.3s ease;
+}
+
+.botonera li a {
+    color: white;
+    /* border-top: 1px solid #9D8189; */
+}
+
+.botonera li a:hover {
+    background-color: #F5C1DD;
+}
+
+.botonera .clientes a {
+    color: #674e56;
+}
+
+.botonera .clientes a:hover {
+    background-color: #83045e;
+    color: white;
+}
+
+/* FIN NAV */
+
+/* INICIO BOTÓN SUBIR */
+
+.contenedortop {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    padding: 0;
+}
+
+.top {
+    position: fixed;
+    top: 80%;
+    z-index: 1;
+}
+
+.top a {
+    display: block;
+    line-height: 0;
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+
+.top a img {
+    min-width: 35px;
+    max-width: 40px;
+    filter: invert(40%);
+}
+
+.top a:hover {
+    background-color: rgba(156, 156, 156, 0.6);
+}
+
+.top a:active {
+    background-color: rgba(68, 26, 71, 0.6);
+}
+
+/* FIN BOTÓN SUBIR */
+
+/* INICIO BIENVENIDA */
+
+.bienvenida h2 {
+    padding-top: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #ee9fc9;
+}
+
+h3 {
+    padding-top: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: #83045e;
+}
+
+.imgbienvenida {
+    margin: 30px auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.globulosrojos {
+    background: no-repeat top/300px url(../images/globulosryb2.jpg);
+    /* fixed para parallax*/
+    min-height: 200px;
+    min-width: 50px;
+    margin: 0 auto;
+}
+
+p {
+    color: #674e56;
+    text-align: center;
+    line-height: 2em;
+    font-weight: 300;
+}
+
+.slogan {
+    font-weight: 400;
+    color: #83045e;
+    text-align: center;
+}
+
+/* FIN BIENVENIDA */
+
+/* INICIO EQUIPO */
+
+.titulo {
+    background-color: #83045e;
+    color: white;
+    height: 100px;
+    margin: 50px 0;
+}
+
+.titulo h2 {
+    font-weight: 400;
+    text-align: center;
+    line-height: 100px;
+}
+
+.col- {
+    padding: 0;
+}
+
+.equipoimg {
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+/* INICIO CV */
+
+.cv {
+    width: 80%;
+    border: 1px solid #9D8189;
+    border-bottom: none;
+    margin: 20px auto 0;
+    display: flex;
+    /* border-radius: 10px 10px 0 0; */
+}
+
+.cvimg {
+    width: 50%;
+}
+
+.cv img, .cv2 img {
+    max-width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.vete {
+    align-self: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.vete p {
+    color: #83045e;
+    font-weight: 400;
+    width: 100%;
+    font-size: 1em;
+}
+
+.cv2 {
+    width: 80%;
+    border: 1px solid #9D8189;
+    margin: 20px auto 25px;
+    display: flex;
+}
+
+.cvacordeon {
+    width: 80%;
+    border: 1px solid #9D8189;
+    border-top: none;
+    margin: 0 auto 25px;
+    /* border-radius: 0 0 10px 10px; */
+    /* overflow: hidden; */
+    line-height: 2em;
+    z-index: 0;
+}
+
+.accordion-button {
+    justify-content: center;
+}
+
+.collapsed {
+    color: rgb(55, 48, 48);
+    background-color: #F5C1DD;
+}
+
+.accordion-button:not(.collapsed) {
+    color: white;
+    background-color: #9D8189;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+    content: "";
+    background: no-repeat center/80% url(../images/circle-down.svg);
+    opacity: 8 0%;
+    filter: invert();
+}
+
+.accordion-button::after {
+    background-image: none;
+    content: "";
+    background: no-repeat center/80% url(../images/circle-down.svg);
+    opacity: 60%;
+    margin-left: 0;
+}
+
+/* FIN CV */
+
+/* FIN EQUIPO */
+
+/* INICIO SERVICIOS */
+
+.posicionar {
+    position: relative;
+    text-align: center;
+}
+
+.posicionar .equipoimg {
+    opacity: 40%;
+}
+
+.posicionar2 {
+    position: absolute;
+    top: 30%;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #83045e;
+}
+
+.servicios {
+    /* box-shadow: 0 0 10px 0 #83045e; */
+    border: 1px dotted #9D8189;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.servicios img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+}
+
+.servicios p {
+    padding: 10px 5px;
+}
+
+.servicios ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #9D8189;
+    line-height: 2em;
+    text-align: center;
+    padding: 0;
+}
+
+.servicios a {
+    background-color: #83045e;
+    border-radius: 10px;
+    color: white;
+    margin: 30px auto 20px;
+    width: 80%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 2em;
+    padding: 10px 10px;
+}
+
+.servicios a:hover {
+    background-color: #9E8D96;
+    color: white;
+}
+
+.servicios a:active {
+    background-color: #674e56;
+}
+
+/* FIN SERVICIOS */
+
+/* INICIO NOVEDADES */
+
+.novedadestitulo {
+    padding: 50px 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.novedadestitulo h2 {
+    text-align: center;
+    color: #ee9fc9;
+    font-weight: 600;
+}
+
+.novedades {
+    margin-bottom: 50px;
+    border: 0.5px dotted #674e56;
+    width: 90%;
+}
+
+.novedades h4 {
+    text-align: left;
+    margin-bottom: 0;
+    line-height: 2em;
+}
+
+.bajada div {
+    display: flex;
+    /* lo puse para alinear los p y span*/
+}
+
+.fecha {
+    padding-left: 0.7em;
+    color: #b3acae;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.bajada p {
+    margin-bottom: 0;
+    font-size: 0.8em;
+}
+
+.autor {
+    color: #cc869c;
+    text-align: left;
+    padding-left: 0.7em;
+}
+
+.contenido p {
+    color: rgb(43, 42, 42);
+    text-align: left;
+}
+
+hr {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+/* ICOMOON NOVEDADES */
+
+.icon-clock:before {
+    font-family: 'icomoon';
+    content: "\e94e";
+    margin-right: 0.7em;
+    font-size: 0.8em;
+}
+
+.icon-calendar:after {
+    font-family: 'icomoon';
+    content: "\e953";
+}
+
+.icon-calendar, .icon-clock {
+    color: #b3acae;
+    margin-left: 0.5em;
+    font-style: normal;
+}
+
+/* FIN ICOMOON NOVEDADES*/
+
+/* FIN NOVEDADES */
+
+/* INICIO GALERÍA */
+
+.galeria {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-right: 20px;
+    background-color: white;
+}
+
+.galeria:last-child {
+    float: left;
+}
+
+.galeria img {
+    width: 200px;
+    padding: 10px;
+}
+
+.galeimg {
+    border: 1px dotted #9D8189;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* FIN GALERÍA */
+
+/* INICIO CONTACTO */
+
+.enviado{
+    height: 300px;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.formulario {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+h4 {
+    color: #83045e;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contactolabo {
+    background-color: white;
+}
+
+.botonform {
+    display: flex;
+  
+}
+
+.formulario p input {
+    width: 250px;
+    border: 0.5px dotted #9D8189;
+    
+}
+
+::placeholder{
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.formulario input[type="submit"], .formulario input[type="reset"] {
+    width: 5em;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.formulario input[type="submit"] {
+    margin-right: 20px;
+    background-color: #83045e;
+    color: white;
+}
+
+.formulario input[type="reset"] {
+    background-color: #9E8D96;
+    color: white;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #F5C1DD;
+    color: black;
+}
+
+.formulario input[type="reset"]:hover {
+    background-color: #674e56;
+}
+
+.formulario textarea {
+    resize: none;
+    vertical-align: top;
+    border: 0.5px dotted #9D8189;
+    width: 250px;
+}
+
+.contacto {
+    background-color: #9D8189;
+}
+
+.contactos p {
+    color: white;
+}
+
+.horarios, .redes {
+    margin-bottom: 55px;
+}
+
+.horarios {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+}
+
+.icon-instagram, .icon-mail, .icon-telefono, .icon-ubicacion {
+    display: flex;
+    justify-content: center;
+}
+
+.redes a {
+    color: white;
+    line-height: 1.8em;
+}
+
+.redes a:hover {
+    color: #83045e;
+}
+
+.redes p:last-child {
+    margin-bottom: 0;
+}
+
+.mapa {
+    text-align: center;
+    margin: 0 auto 50px;
+}
+
+/* FIN CONTACTO */
+
+/* ICOMOON */
+
+.icon-instagram:before, .icon-mail:before, .icon-telefono:before, .icon-ubicacion:before {
+    margin-right: 10px;
+}
+
+.icon-mail1:before {
+    font-family: 'icomoon';
+    content: "\e900";
+}
+
+.icon-ubicacion:before {
+    font-family: 'icomoon';
+    content: "\e901";
+}
+
+.icon-telefono:before {
+    font-family: 'icomoon';
+    content: "\e902";
+}
+
+.icon-nuevo:before {
+    font-family: 'icomoon';
+    content: "\e924";
+}
+
+.icon-descarga:before {
+    font-family: 'icomoon';
+    content: "\e9c7";
+}
+
+.icon-agregar:before {
+    font-family: 'icomoon';
+    content: "\ea0a";
+}
+
+.icon-mail:before {
+    font-family: 'icomoon';
+    content: "\ea86";
+}
+
+.icon-circle-down:before {
+    font-family: 'icomoon';
+    padding: 5px 0 0 5px;
+    content: "\ea43";
+}
+
+.icon-instagram:before {
+    font-family: 'icomoon';
+    content: "\e903";
+}
+
+/* ICOMOON*/
+
+/* INICIO FOOTER */
+
+footer {
+    background-color: #F5C1DD;
+    color: #674e56;
+    text-align: center;
+    padding: 20px 0 20px 10px;
+    width: 100%;
+}
+
+/* FIN FOOTER */
+
+/* INICIO RESPONSIVE */
+
+@media screen and (min-width: 576px) {
+    /* HEADER Y NAV */
+    .hambu {
+        display: none;
+    }
+    .navcerrado {
+        height: inherit;
+    }
+    header {
+        background: no-repeat center/100% url(../images/labo2000x855.jpg);
+    }
+    header .holder {
+        margin: 0 0 0 20px;
+        padding: 70px 0 70px 20px;
+        position: relative;
+        top: -10px;
+    }
+    .logo {
+        max-width: 220px;
+    }
+    nav {
+        opacity: 90%;
+        position: fixed;
+        top: 0;
+        z-index: +1;
+        background-color: #674e56;
+    }
+    .botonera {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 0.8em;
+    }
+    .botonera li a {
+        padding: 0 8px;
+    }
+    /* FIN HEADER Y NAV */
+    /* BOTÓN SUBIR */
+    /* .contenedortop {
+        display: none;
+    } */
+    /* FIN BOTÓN SUBIR */
+    /* INICIO BIENVENIDA */
+    .bienvenida {
+        width: 70%;
+        margin-bottom: 50px;
+    }
+    .bienvenida h2 {
+        font-size: 1.2em;
+    }
+    .bienvenida h3 {
+        font-size: 1em;
+    }
+    .globulosrojos {
+        background: no-repeat top/300px url(../images/globulosryb2.jpg);
+        min-height: 200px;
+        min-width: 100px;
+        margin: 0 auto;
+    }
+    .bienvenida .holder {
+        margin-left: 0;
+        padding: 18px 0 15px;
+    }
+    .bienvenida col {
+        padding-left: 0;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    /* FIN BIENVENIDA */
+    /* INICIO EQUIPO */
+    .contenedortitulos {
+        background-color: #83045e;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .titulo {
+        margin: 0;
+    }
+    .titulo h2 {
+        font-size: 1.2em;
+    }
+    .equipoimg {
+        margin-bottom: 0;
+    }
+    .equipo {
+        margin: 0 auto;
+    }
+    /* FIN EQUIPO */
+    /* INICIO CV */
+    .equipos {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 30px 0;
+    }
+    .cv, .cvacordeon, .cv2 {
+        width: 150px;
+        border: 1px dotted #9D8189;
+    }
+    .cvacordeon {
+        margin: 0;
+    }
+    .cv, .cv2 {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    .cv {
+        height: 400px;
+    }
+    .cv2 {
+        height: 453px;
+    }
+    .cvimg {
+        width: 100%;
+        height: 191px;
+    }
+    .cv img, .cv2 img {
+        width: 200px;
+    }
+    .vete {
+        width: 100%;
+        align-self: flex-start;
+    }
+    .sole .vete {
+        margin-bottom: 50px;
+    }
+    .nosole .vete {
+        margin-bottom: 145px;
+    }
+    .vete p, .cvacordeon span {
+        font-size: 0.9em;
+    }
+    /* FIN CV */
+    /* INICIO SERVICIOS */
+    .posicionar {
+        background-color: white;
+    }
+    .posicionar2 {
+        top: 45%;
+    }
+    .servicios {
+        margin: 30px auto;
+    }
+    .serv2 {
+        margin-bottom: 70px;
+    }
+    .servicios ul {
+        display: block;
+        text-align: left;
+        padding-left: 80px;
+    }
+    .servicios ul li, .servicios a {
+        font-size: 0.9em;
+    }
+    /* FIN SERVICIOS */
+    /* INICIO CONTACTO */
+    /* FIN CONTACTO */
+    /* INICIO NOVEDADES */
+    .bajada p {
+        font-size: 0.8em;
+    }
+    .icon-calendar {
+        margin-left: 1.5em;
+    }
+    /* FIN NOVEDADES */
+    /* INICIO FOOTER */
+    footer {
+        font-size: 0.8em;
+    }
+    /* FIN FOOTER */
+}
+
+@media screen and (min-width: 768px) {
+    /* HEADER Y NAV */
+    header .holder {
+        padding: 100px 0 100px 20px;
+        top: -30px;
+    }
+    .logo {
+        max-width: 280px;
+    }
+    .botonera {
+        font-size: 0.9em;
+    }
+    .botonera li a {
+        padding: 0 10px;
+    }
+    /* FIN HEADER Y NAV */
+    /* INICIO BIENEVENIDA */
+    .bienvenida {
+        margin-top: 30px;
+        width: 700px;
+    }
+    .globulosrojos {
+        background: no-repeat center/400px url(../images/globulosryb2.jpg);
+        min-height: 300px;
+        min-width: 350px;
+        margin: 0 auto;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    /* FIN BIENVENIDA */
+    /* INICIO EQUIPO */
+    .contenedortitulos {
+        background-color: #83045e;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .titulo h2 {
+        font-size: 1.4em;
+    }
+    /* FIN EQUIPO */
+    /* INICIO SERVICIOS */
+    .servicios {
+        margin: 30px auto 70px;
+    }
+    .servicios h3 {
+        font-size: 1em;
+        margin-bottom: 25px;
+    }
+    .servicios p {
+        text-align: left;
+        margin: 0 auto;
+        width: 310px;
+    }
+    .serv2 a {
+        margin-top: 114px;
+    }
+    .servicios ul li, .servicios a {
+        font-size: 0.9em;
+    }
+    /* FIN SERVICIOS */
+    /* INICIO CONTACTO */
+    .formulario {
+        margin: 50px auto;
+    }
+    .formulario h4 {
+        margin-bottom: 50px;
+    }
+    .formulario p input {
+        width: 500px;
+    }
+    .mapa {
+        margin-top: 50px;
+    }
+    iframe {
+        width: 90%;
+    }
+    .redes {
+        margin-top: 55px;
+    }
+    .formulario textarea {
+        width: 500px;
+    }
+    .formulario input[type="submit"], .formulario input[type="reset"] {
+        width: 7em;
+        padding: 10px;
+    }
+    /* FIN CONTACTO */
+    /* INICIO NOVEDADES */
+    .bajada p {
+        font-size: 0.8em;
+    }
+    /* FIN NOVEDADES */
+    /* INICIO FOOTER */
+    /* INICIO FOOTER */
+}
+
+@media screen and (min-width: 992px) {
+    /* HEADER Y NAV */
+    header .holder {
+        padding: 120px 0 120px 20px;
+        top: -50px;
+    }
+    .logo {
+        max-width: 350px;
+    }
+    .botonera {
+        font-size: 0.9em;
+    }
+    .botonera li a {
+        padding: 0 13px;
+    }
+    /* FIN HEADER Y NAV */
+    /* INICIO BIENVENIDA */
+    .bienvenida {
+        width: 700px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .bienvenida h2 {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+    .bienvenida h3 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    .imgbienvenida {
+        margin-bottom: 40px;
+    }
+    .globulosrojos {
+        background: no-repeat bottom/500px url(../images/globulosryb2.jpg);
+        min-height: 300px;
+        min-width: 250px;
+        margin: 0 auto;
+    }
+    .bienvenida .holder {
+        margin-left: 0;
+        padding: 18px 0 15px;
+    }
+    p {
+        font-size: 1em;
+        line-height: 2.3;
+    }
+    /* FIN BIENVENIDA */
+    /* INICIO EQUIPO */
+    .titulo h2 {
+        font-size: 1.6em;
+    }
+    .vete p {
+        font-size: 1em;
+    }
+    .cv, .cvacordeon, .cv2 {
+        width: 200px;
+    }
+    .sole .vete {
+        margin-bottom: -71px;
+    }
+    .nosole .vete {
+        margin-bottom: 35px;
+    }
+    /* FIN EQUIPO */
+    /* INICIO SERVICIOS */
+    .posicionar2 {
+        font-size: 1.2em;
+    }
+    .servicios {
+        margin: 30px auto 70px;
+    }
+    .servicios img {
+        max-width: 250px;
+    }
+    .servicios h3 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+    }
+    .servicios p {
+        width: 400px;
+        margin: 0 auto;
+    }
+    .serv2 a {
+        margin-top: 138px;
+        line-height: 2em;
+    }
+    /* FIN SERVICIOS */
+    /* INICIO CONTACTO */
+    .formulario {
+        width: 100%;
+    }
+    /* FIN CONTACTO */
+    /* INICIO FOOTER */
+    footer {
+        font-size: 0.9em;
+    }
+    /* FIN FOOTER */
+}
+
+@media screen and (min-width: 1200px) {
+    /* HEADER Y NAV */
+    header .holder {
+        padding: 150px 0 150px 20px;
+        top: -80px;
+    }
+    .logo {
+        max-width: 480px;
+    }
+    .botonera li a {
+        padding: 0 17px;
+        line-height: 45px;
+    }
+    .botonera {
+        font-size: 0.95em;
+    }
+    /* FIN HEADER Y NAV */
+    /* INICIO BIENVENIDA */
+    .bienvenida {
+        width: 80%;
+        margin-bottom: 50px;
+    }
+    .bienvenida h2 {
+        font-size: 1.6em;
+    }
+    .bienvenida h3 {
+        font-size: 1.2em;
+    }
+    .imgbienvenida {
+        margin-bottom: 50px;
+    }
+    .globulosrojos {
+        background: no-repeat top/500px url(../images/globulosryb2.jpg);
+        min-height: 300px;
+        min-width: 150px;
+        margin: 0 auto;
+    }
+    p {
+        font-size: 1em;
+        line-height: 2.3;
+    }
+    /* FIN BIENVENIDA */
+    /* INICIO EQUIPO */
+    .titulo h2 {
+        font-size: 1.8em;
+    }
+    .equipoimgt {
+        background-color: white;
+    }
+    /* FIN EQUIPO */
+    /* INICIO CV */
+    /* FIN CV */
+    /* INICIO SERVICIOS */
+    .servicios {
+        margin: 100px auto 140px;
+    }
+    .servicios h3 {
+        font-size: 1.4em;
+        line-height: 1.2;
+    }
+    .servicios img {
+        max-width: 300px;
+    }
+    .serv2 a {
+        margin-top: 138px;
+        line-height: 2em;
+    }
+    .servicios ul {
+        display: block;
+        text-align: left;
+        padding-left: 100px;
+        font-size: 1em;
+    }
+    /* FIN SERVICIOS */
+    /* INICIO CONTACTO */
+    .contacto {
+        font-size: 0.9em;
+    }
+    .formulario h4 {
+        margin-bottom: 50px;
+    }
+    .formulario p input {
+        width: 500px;
+    }
+    .formulario input[type="submit"], .formulario input[type="reset"] {
+        width: 7em;
+        padding: 10px;
+    }
+    .contactos p {
+        font-size: 1.1em;
+        font-weight: 400;
+    }
+    /* FIN CONTACTO */
+    /* INICIO NOVEDADES */
+    .novedadestitulo {
+        font-size: 2.4em;
+    }
+    .novedades h4 {
+        font-size: 2em;
+    }
+    .bajada p {
+        font-size: 0.9em;
+    }
+    .bajada span {
+        line-height: 2em;
+    }
+    .icon-calendar {
+        margin-left: 1.5em;
+    }
+    .icon-calendar, .icon-clock {
+        font-size: 1em;
+    }
+    /* FIN NOVEDADES */
+    /* INICIO FOOTER */
+    footer {
+        font-size: 0.9em;
+    }
+    /* FIN FOOTER */
+}
+
+@media screen and (min-width: 1400px) {
+    /* HEADER Y NAV */
+    header .holder {
+        padding: 180px 0 180px 20px;
+        top: -116px;
+    }
+    .logo {
+        max-width: 500px;
+    }
+    .botonera {
+        font-size: 1em;
+    }
+    .botonera li a {
+        padding: 0 18px;
+    }
+    /* FIN HEADER Y NAV */
+    /* INICIO BIENVENIDA */
+    .bienvenida {
+        width: 80%;
+    }
+    .bienvenida h2 {
+        font-size: 1.7em;
+        padding-top: 50px;
+    }
+    .bienvenida h3 {
+        padding-top: 50px;
+        font-size: 1.3em;
+    }
+    .imgbienvenida {
+        margin-bottom: 50px;
+    }
+    .globulosrojos {
+        background: no-repeat bottom/600px url(../images/globulosryb2.jpg);
+        min-height: 400px;
+        min-width: 150px;
+        margin: 0 auto;
+    }
+    p {
+        font-size: 1.05em;
+        line-height: 2.1;
+    }
+    /* FIN BIENVENIDA */
+    /* INICIO EQUIPO */
+    .contenedortitulos {
+        background-color: #83045e;
+        margin-bottom: 40px;
+    }
+    .titulo {
+        margin: 0;
+    }
+    .titulo h2 {
+        font-size: 1.8em;
+    }
+    .equipoimg {
+        margin-bottom: 0;
+    }
+    .equipoimgt {
+        background-color: white;
+    }
+    .equipo {
+        margin: 0 auto;
+    }
+    /* FIN EQUIPO */
+    /* INICIO CV */
+    /* FIN CV */
+    /* INICIO SERVICIOS */
+    .posicionar {
+        background-color: white;
+    }
+    .posicionar2 {
+        top: 45%;
+        font-size: 1.3em;
+    }
+    .servicios img {
+        max-width: 300px;
+    }
+    .serv2 a {
+        margin-top: 132px;
+        line-height: 2.2em;
+    }
+    .servicios ul {
+        display: block;
+        text-align: left;
+        padding-left: 70px;
+        font-size: 1.1em;
+    }
+    .servicios p {
+        width: 500px;
+    }
+    .servicios a {
+        font-size: 1em;
+    }
+    /* FIN SERVICIOS */
+    /* INICIO CONTACTO */
+    .formulario {
+        margin: 80px auto 100px;
+    }
+    .formulario h4 {
+        margin-bottom: 50px;
+    }
+    .formulario p input {
+        width: 500px;
+    }
+    .redes {
+        margin-top: 55px;
+    }
+    .formulario textarea {
+        width: 500px;
+    }
+    .formulario input[type="submit"], .formulario input[type="reset"] {
+        width: 7em;
+        padding: 10px;
+    }
+    /* FIN CONTACTO */
+    /* INICIO NOVEDADES */
+    .novedades h4 {
+        font-size: 2em;
+    }
+    .bajada p {
+        font-size: 0.9em;
+    }
+    .bajada span {
+        line-height: 2em;
+    }
+    .icon-calendar, .icon-clock {
+        font-size: 1em;
+    }
+    /* FIN NOVEDADES */
+    /* INICIO FOOTER */
+    footer {
+        font-size: 1em;
+    }
+    /* FIN FOOTER */
+}
