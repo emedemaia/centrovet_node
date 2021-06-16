@@ -1,0 +1,30 @@
+/* font-family: myriad-pro, sans-serif;
+Normal e Italic
+
+Light:300
+Regular:400
+Semibold:600
+Bold:700
+
+colores:
+botonera:#9E8D96
+clientes/rosa logo: #F5C1DD
+otro rosa: #ee9fc9
+violeta logo: #83045e
+texto oscuro:#9D8189
+más oscuro:#674e56
+
+color fecha gris claro: #b3acae
+  color autor: #cc869c;
+*/
+
+header{
+    background-color: #F5C1DD;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+header img{
+    width: 50%;
+}
