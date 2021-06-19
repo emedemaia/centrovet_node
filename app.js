@@ -78,7 +78,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.get('/', (req, res) => res.send('index'))
+app.get('/', (req, res) => res.send('./routes/index'))
 
 
 app.listen(3000, () => console.log('Server running on port 3000!'))
