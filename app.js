@@ -18,10 +18,6 @@ var adminRouter = require('./routes/admin/novedades');
 var app = express();
 
 
-
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -62,8 +58,7 @@ app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
 
 
-// Start the Express server
-app.listen(3000, () => console.log('Server running on port 3000!'))
+
 
 
 // catch 404 and forward to error handler
@@ -81,5 +76,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(3000, () => console.log('Server running on port 3000!'))
 
 module.exports = app;
