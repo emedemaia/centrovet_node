@@ -1,14 +1,15 @@
 <main>
 
-    <form action="" method="" class="formnov">
+    <form action="/admin/novedades/agregar" method="post" class="formnov">
 
         <p>
-            <input type="text" placeholder="Título">
+            <input type="text" placeholder="Título" name="titulo">
         </p>
 
         <p>
             <select name="autor" id="autor">
                 <option value="María Soledad Varela">María Soledad Varela</option>
+                <option value="Maia">Maia</option>
             </select>
         </p>
         
@@ -16,9 +17,13 @@
             <textarea name="cuerpo" id="cuerpo" cols="30" rows="10"
                 placeholder="Ingrese el texto de la novedad"></textarea>
         </p>
-
-        <button class="submit-login">Grabar</button>
-        <button class="regresar" href="admin/novedades">Volver</button>
+{{#if error}}
+<p>
+{{message}}
+</p>
+{{/if}}
+        <button class="submit-login" type="submit">Grabar</button>
+        <a class="regresar" href="/admin/novedades">Volver</a>
     </form>
 
 </main>
