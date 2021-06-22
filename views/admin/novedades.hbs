@@ -1,8 +1,51 @@
 <main>
+    <div class="inicio">
 
-    <h6><script>
- horario(hora);
-    </script> <span class="usuario-novedades">{{usuario}}!</span> ¿Qué novedades hay para hoy? </h6>
+        <div class="saludo">
+            <h6>
+                <script>
+                    horario(hora);
+                </script> <span class="usuario-novedades">{{usuario}}!</span> ¿Qué novedades hay para hoy?
+            </h6>
+        </div>
 
-    
+        <div class="cerrar">
+
+            <a href="login/logout" class="btn btn-danger cerrarses"><i class="fas fa-sign-out-alt"></i> Cerrar
+                Sesión</a>
+        </div>
+
+    </div>
+
+    <div class="nuevo">
+        <div>
+            <h4>Novedades</h4>
+        </div>
+        <div> <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fas fa-plus"></i> Nuevo</a></div>
+    </div>
+
+
+    <table class="table table-striped">
+        <thead class="thead">
+            <tr>
+                <th scope="col" class="col-1">#</th>
+                <th scope="col" class="col-9">Título</th>
+                <th scope="col" class="acciones">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each novedades}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{titulo}}</td>
+                <td class="acciones">
+
+                    <a href=""><i class="fas fa-edit"></i></a>
+                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+{{/each}}
+
+        </tbody>
+    </table>
 </main>

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var usuariosModel = require('../../modelo/usuarios')
+var usuariosModel = require('../../models/usuarios')
 
 /* GET login page */
 
