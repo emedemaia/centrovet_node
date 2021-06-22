@@ -15,6 +15,18 @@ router.get('/', async function (req, res, next) {
 
 });
 
+//novedades ascendente
+router.get('/asc', async function (req, res, next) {
+    var novedades = await novedadesModel.getNovedadesAsc();
+
+    res.render('admin/novedades', {
+        layout: 'admin/layout',
+        usuario: req.session.nombre,
+        novedades
+    });
+
+});
+
 
 //página agregar novedades
 router.get('/agregar', function (req, res, next) {
@@ -61,6 +73,42 @@ router.get('/eliminar/:id', async(req, res, next)=>{
 
 
 
+// para subir la novedad por id a la página de modificar
+router.get('/modificar/:id', async(req, res, next)=>{
+    var id = req.params.id;
+    var novedad = await novedadesModel.getNovedadById(id);
+    res.render('admin/modificar',{
+        layout: 'admin/layout',
+        novedad
+    })
+    
+});
+
+// para realizar el update mediante post a la BD
+router.post('/modificar', async(req, res, next)=>{
+    try{
+var obj ={
+    titulo: req.body.titulo,
+    autor: req.body.autor,
+    cuerpo: req.body.cuerpo,
+}
+await novedadesModel.modificarNovedadById(obj, req.body.id);
+res.redirect('/admin/novedades');
+
+console.log(obj);
+
+    }catch(error){
+        console.log(error);
+        res.render('admin/modificar',{
+            layout:'admin/layout',
+            error: true,
+            message: 'La novedad no pudo ser actualizada. Intente nuevamente.'
+        })
+    }
+});
+
+
+//para imprimir las novedades en el front
 
 module.exports = router;
 

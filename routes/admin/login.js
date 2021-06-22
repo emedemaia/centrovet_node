@@ -10,6 +10,8 @@ router.get('/', function(req, res, next){
     });
 });
 
+
+//login
 router.post('/', async (req, res, next) => {
     try {
         var usuario = req.body.usuario; 
@@ -35,4 +37,15 @@ router.post('/', async (req, res, next) => {
     }
 
 });
+
+//logout
+
+router.get('/logout', function(req, res, next){
+req.session.destroy();
+
+res.render('admin/login',{
+    layout:'admin/layout'
+});
+});
+
 module.exports = router;
