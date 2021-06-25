@@ -17,3 +17,7 @@ var cliente = document.getElementsByClassName('clientes')[0]
 function botonabajo() {
     botonera.classList.toggle('navabierto');
 }
+
+
+
+

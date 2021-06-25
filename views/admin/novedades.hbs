@@ -2,11 +2,12 @@
     <div class="inicio">
 
         <div class="saludo">
-            <h6>
-                <script>
-                    horario(hora);
-                </script> <span class="usuario-novedades">{{usuario}}!</span> ¿Qué novedades hay para hoy?
-            </h6>
+
+            <script>
+                horario(hora);
+            </script>
+            <span class="usuario-novedades">{{usuario}}!</span> ¿Qué novedades hay para hoy?
+
         </div>
 
         <div class="cerrar">
@@ -25,10 +26,14 @@
         </div>
     </div>
 
-    <div>
-        <h6>Orden</h6>
-        <a href="/admin/novedades/asc">Ascendente</a>
-        <a href="/admin/novedades">Descendente</a>
+    <div class="ordenContenedor">
+         <button onclick="orden();">Orden</button>
+
+        <div class="orden ordenopacity">
+            
+        <a href="/admin/novedades/asc" class="asc">Ascendente</a>
+        <a href="/admin/novedades" class="desc">Descendente</a>
+        </div>
     </div>
 
     <table class="table table-striped">
@@ -56,3 +61,13 @@
         </tbody>
     </table>
 </main>
+
+<script>
+     //ordenar
+var ordenar = document.getElementsByClassName('ordenopacity')[0];
+
+
+ function orden() {
+  ordenar.classList.toggle('ordenopacitynew');
+};
+    </script>

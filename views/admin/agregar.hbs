@@ -3,19 +3,21 @@
     <form action="/admin/novedades/agregar" method="post" class="formnov">
 
         <p>
-            <input type="text" placeholder="Título" name="titulo">
+            <textarea name="titulo" placeholder="Título" id="titulo" rows="1"></textarea>
         </p>
 
         <p>
             <select name="autor" id="autor">
                 <option value="María Soledad Varela">María Soledad Varela</option>
-                <option value="Maia">Maia</option>
+                <option value="Maia Inés Elías">Maia Inés Elías</option>
             </select>
         </p>
+
+       
         
         <p>
-            <textarea name="cuerpo" id="cuerpo" cols="30" rows="10"
-                placeholder="Ingrese el texto de la novedad"></textarea>
+            <textarea name="cuerpo" id="cuerpo"  rows="10"
+                placeholder="Ingrese el texto de la novedad"><p>Párrafo</p></textarea>
         </p>
 {{#if error}}
 <p>
@@ -25,5 +27,13 @@
         <button class="submit-login" type="submit">Grabar</button>
         <a class="regresar" href="/admin/novedades">Volver</a>
     </form>
+
+<div class="notacion">
+    <p><b><u>Para dar formato al texto:</u></b></p>
+    <p>Para ingresar un párrafo, escribí entre &lt;p&gt;&lt;/p&gt;</p>
+    <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u> &lt;u&gt;&lt;/u&gt;</p>
+    <p>Para insertar una imagen, escribí &lt;img src="<i>acá ingresá el link a la foto"</i>&gt;</p>
+</div>
+
 
 </main>

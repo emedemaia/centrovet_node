@@ -72,7 +72,7 @@ async function getNovedadesMX() {
 async function getNovedadesFechaHora() {
   
     
-    var query ="select id,titulo,autor,cuerpo, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i:%s') as fechahora from novedades order by id desc";
+    var query ="select id,titulo,autor,cuerpo, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades order by id desc";
    
 
     var rows = await pool.query(query);
