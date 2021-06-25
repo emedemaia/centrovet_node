@@ -1,37 +1,37 @@
- <main>
-        <!-- INICIO NOVEDADES -->
+<main>
+    <!-- INICIO NOVEDADES -->
 
 
-        <div class="novedadestitulo" id="novedades">
-            <h2>NOVEDADES</h2>
-        </div>
+    <div class="novedadestitulo" id="novedades">
+        <h2>NOVEDADES</h2>
+    </div>
 
-{{#each novedades}}
-        <div class="container-fluid novedades" value={{id}}>
-            <div class="row">
-                <div class="col">
-                    <h3>{{titulo}}</h3>
-                </div>
-            </div>
-
-            <div class="row bajada">
-                <div class="col">
-                    <p class="fecha">{{fechahora}} hs</p>
-                    <span class="icon-calendar"></span>
-                    <span class="icon-clock">-</span>
-                    <p class="autor">{{autor}}</p>
-                </div>
-              </div>
-            <hr>
-            <div class="row">
-                <div class="col contenido">
-                    <p>{{{cuerpo}}}
-                    </p>
-                </div>
+    {{#each novedades}}
+    <div class="container-fluid novedades" value={{id}}>
+        <div class="row">
+            <div class="col">
+                <h3>{{titulo}}</h3>
             </div>
         </div>
-{{/each}}
-        
 
-        <!-- FIN NOVEDADES -->
-    </main>
+        <div class="row bajada">
+            <div class="col">
+                <p class="fecha">{{fechahora}} hs</p>
+                <span class="icon-calendar"></span>
+                <span class="icon-clock">-</span>
+                <p class="autor">{{autor}}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col contenido">
+                <p>{{{cuerpo}}}
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+
+    <!-- FIN NOVEDADES -->
+</main>
