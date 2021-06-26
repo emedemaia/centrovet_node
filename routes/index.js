@@ -33,7 +33,7 @@ router.post('/', async (req, res, next)=> {
     port: process.env.SMTP_PORT,
     auth:{
       user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS, //llama a .env y esos datos
+      pass: process.env.SMTP_PASS //llama a .env y esos datos
     }
   });
 

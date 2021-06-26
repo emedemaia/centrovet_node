@@ -143,18 +143,36 @@ input::placeholder {
 .ordenContenedor {
  margin: 0 auto;
  width: 95%;
+ overflow: visible;
+ height: 50px;
+}
+
+.ordenContenedor button{
+  padding: 10px;
+  border: none;
+  /* border-radius: 10px 10px 0 0; */
+  background-color: #674e56;
+  color: white;
+  width: 120px;
 }
 
 .orden{
   display: flex;
   flex-direction: column;
   background-color: #F5C1DD;
-  width: 100px;
-  border-radius: 10%;
-  padding: 5px;
+  width: 120px;
+  /* border-radius: 10px; */
+  padding: 10px;
+
+position: relative;
+bottom: 50px;
+left: 120px;
+
   transition: all 0.4s ease-in-out ;
-  z-index: +1;
 }
+
+
+
 
 .orden a{
   text-decoration: none;
@@ -164,12 +182,11 @@ input::placeholder {
 .ordenopacity{
   opacity: 0%;
 
-
 }
 
 .ordenopacitynew{
  opacity: 100%;
-
+ 
 }
 
 

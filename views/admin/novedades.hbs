@@ -27,7 +27,7 @@
     </div>
 
     <div class="ordenContenedor">
-         <button onclick="orden();">Orden</button>
+         <button onmouseover="orden();">Orden</button>
 
         <div class="orden ordenopacity">
             
@@ -69,5 +69,9 @@ var ordenar = document.getElementsByClassName('ordenopacity')[0];
 
  function orden() {
   ordenar.classList.toggle('ordenopacitynew');
+};
+
+ function ordenOff() {
+  ordenar.classList.toggle('ordenopacity');
 };
     </script>
