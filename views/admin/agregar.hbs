@@ -1,6 +1,6 @@
 <main>
 
-    <form action="/admin/novedades/agregar" method="post" class="formnov">
+    <form action="/admin/novedades/agregar" method="post" class="formnov" enctype="multipart/form-data">
 
         <p>
             <textarea name="titulo" placeholder="Título" id="titulo" rows="1"></textarea>
@@ -8,7 +8,7 @@
 
         <p>
             <select name="autor" id="autor">
-                <option value="María Soledad Varela">María Soledad Varela</option>
+                <option value="Ma. Soledad Varela">Ma. Soledad Varela</option>
                 <option value="Maia Inés Elías">Maia Inés Elías</option>
             </select>
         </p>
@@ -17,8 +17,14 @@
         
         <p>
             <textarea name="cuerpo" id="cuerpo"  rows="10"
-                placeholder="Ingrese el texto de la novedad"><p>Párrafo</p></textarea>
+                placeholder="Ingrese el texto de la novedad"></textarea>
         </p>
+
+           <p>
+            <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"
+                value={{novedad.etiquetas}}>{{novedad.etiquetas}}</textarea>
+        </p>
+        <input type="file" name="images" accept="image/jpeg, image/png">
 {{#if error}}
 <p>
 {{message}}

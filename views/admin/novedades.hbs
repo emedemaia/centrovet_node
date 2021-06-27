@@ -26,15 +26,25 @@
         </div>
     </div>
 
-    <div class="ordenContenedor">
-         <button onmouseover="orden();">Orden</button>
+    <div class="orden">
 
-        <div class="orden ordenopacity">
-            
-        <a href="/admin/novedades/asc" class="asc">Ascendente</a>
-        <a href="/admin/novedades" class="desc">Descendente</a>
-        </div>
+        <p><a href="/admin/novedades/asc" class="boton">Ascendente</a></p>
+
+        <p><a href="/admin/novedades" class="boton">Descendente</a></p>
+
+
     </div>
+
+    <div class="searchcontenedor">
+
+        <form action="/admin/novedades" method="get" class="search">
+            <input type="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
+            <button type="submit" class="button-search"><i class="fas fa-search"></i></button>
+        </form>
+
+    </div>
+
+
 
     <table class="table table-striped">
         <thead class="thead">
@@ -60,18 +70,11 @@
 
         </tbody>
     </table>
+    <div class="resultado">
+        {{#if is_search}}
+        {{#unless novedades.length}}
+        No se encontraron resultados para "<b>{{q}}</b>".
+        {{/unless}}
+        {{/if}}
+    </div>
 </main>
-
-<script>
-     //ordenar
-var ordenar = document.getElementsByClassName('ordenopacity')[0];
-
-
- function orden() {
-  ordenar.classList.toggle('ordenopacitynew');
-};
-
- function ordenOff() {
-  ordenar.classList.toggle('ordenopacity');
-};
-    </script>

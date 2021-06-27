@@ -14,10 +14,9 @@ hamburguesa.addEventListener("click", function () {
 
 var botonera = document.getElementsByClassName('botonera')[0]
 var cliente = document.getElementsByClassName('clientes')[0]
+
 function botonabajo() {
     botonera.classList.toggle('navabierto');
 }
-
-
 
 

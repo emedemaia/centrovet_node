@@ -6,6 +6,15 @@
         <h2>NOVEDADES</h2>
     </div>
 
+<div class="searchcontenedor">
+
+        <form action="novedades" method="get" class="search">
+            <input type="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
+            <button type="submit" class="button-search"><i class="fas fa-search"></i></button>
+        </form>
+
+    </div>
+
     {{#each novedades}}
     <div class="container-fluid novedades" value={{id}}>
         <div class="row">
@@ -29,9 +38,22 @@
                 </p>
             </div>
         </div>
+        <hr class="etiquetahr">
+          <div class="row">
+            <div class="col etiquetas">
+                <p>{{etiquetas}}
+                </p>
+            </div>
+        </div>
     </div>
     {{/each}}
 
-
+<div class="resultado">
+        {{#if is_search}}
+        {{#unless novedades.length}}
+        No se encontraron resultados para "<b>{{q}}</b>".
+        {{/unless}}
+        {{/if}}
+    </div>
     <!-- FIN NOVEDADES -->
 </main>

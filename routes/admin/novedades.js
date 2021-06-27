@@ -1,16 +1,32 @@
 var express = require('express');
 var router = express.Router();
 var novedadesModel = require('../../models/novedadesmodel')
+var multer = require('multer');
+
+var storage = multer.diskStorage({ destination: 'public/images/uploads/',
+filename: function (req, file, cb){
+  cb(null, file.originalname) 
+}});
+
+var upload = multer({storage: storage});
 
 
-//página principal de novedades
+//página principal de novedades y BUSCADOR
 router.get('/', async function (req, res, next) {
-    var novedades = await novedadesModel.getNovedades();
+
+if (req.query.q === undefined){
+    novedades = await novedadesModel.getNovedades();
+}else{
+    novedades = await novedadesModel.buscarNovedades(req.query.q);
+}
 
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        novedades
+        novedades,
+        is_search: req.query.q !== undefined,
+        q:req.query.q
+        
     });
 
 });
@@ -37,13 +53,15 @@ router.get('/agregar', function (req, res, next) {
 
 
 //insertar novedad, procesa lo del formulario
-router.post('/agregar', async (req, res, next) => {
+router.post('/agregar', upload.single('images'), async (req, res, next) => {
     try {
         var titulo = req.body.titulo;
         var autor = req.body.autor;
         var cuerpo = req.body.cuerpo;
+        var etiquetas = req.body.etiquetas;
+        
 
-        if (titulo != "" && autor != "" && cuerpo != "") {
+        if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "") {
             await novedadesModel.insertNovedad(req.body);
             res.redirect('/admin/novedades');
 
@@ -51,7 +69,7 @@ router.post('/agregar', async (req, res, next) => {
             res.render('admin/agregar', {
                 layout: 'admin/layout',
                 error: true,
-                message: 'Todos los campos son requeridos'
+                message: 'Todos los campos (excepto imágenes) son requeridos'
             });
         }
     } catch (error) {
@@ -91,6 +109,7 @@ var obj ={
     titulo: req.body.titulo,
     autor: req.body.autor,
     cuerpo: req.body.cuerpo,
+    etiquetas: req.body.etiquetas,
 }
 await novedadesModel.modificarNovedadById(obj, req.body.id);
 res.redirect('/admin/novedades');
@@ -108,7 +127,8 @@ console.log(obj);
 });
 
 
-//para imprimir las novedades en el front
+//Buscar
+
 
 module.exports = router;
 

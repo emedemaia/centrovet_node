@@ -103,11 +103,6 @@ input::placeholder {
 /* COMIENZO NOVEDADES */
 
 /*heading novedades*/
-
-
-
-
-
 .inicio {
   margin: 10px auto;
   width: 95%;
@@ -140,57 +135,69 @@ input::placeholder {
   text-decoration: none;
 }
 
-.ordenContenedor {
- margin: 0 auto;
- width: 95%;
- overflow: visible;
- height: 50px;
-}
-
-.ordenContenedor button{
-  padding: 10px;
-  border: none;
-  /* border-radius: 10px 10px 0 0; */
-  background-color: #674e56;
-  color: white;
-  width: 120px;
-}
 
 .orden{
+  width: 95%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  background-color: #F5C1DD;
+  height: 40px;
+}
+
+.boton {
+  border: none;
+  border-radius: 10px;
   width: 120px;
-  /* border-radius: 10px; */
-  padding: 10px;
-
-position: relative;
-bottom: 50px;
-left: 120px;
-
-  transition: all 0.4s ease-in-out ;
-}
-
-
-
-
-.orden a{
+  /* line-height: 25px; */
+  height: 35px;
+  padding: 7px;
+  box-sizing: border-box;
+  display: block;
+  color: white ;
+  background-color: #572937;
   text-decoration: none;
-  color: white;
-}
-
-.ordenopacity{
-  opacity: 0%;
-
-}
-
-.ordenopacitynew{
- opacity: 100%;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 0.9em;
  
 }
 
+.off{
+  background-color: #9D8189 ;
+}
+
+.boton:hover{
+  background-color: #9D8189;
+  color: white;
+}
+
+.searchcontenedor{
+  width: 95%;
+  margin: 10px auto;
+}
 
 
+
+.search input{
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.button-search{
+  background-color: #9D8189;
+  color: white;
+  border: none;
+  border-radius: 10px;
+height: 33px;
+width: 33px;
+  
+}
+
+.resultado{
+  width: 95%;
+  margin: 5px auto;
+}
 /*fin heading novedades*/
 
 /*tabla novedades*/
@@ -199,7 +206,7 @@ left: 120px;
   display: flex;
   justify-content: space-between;
   width: 95%;
-  margin: 60px auto 0px;
+  margin: 60px auto 10px;
 }
 
 .nuevo h4 {
@@ -282,3 +289,56 @@ left: 120px;
 /* fin agregar novedades */
 
 /* FIN NOVEDADES */
+
+@media screen and (min-width: 720px){
+  .searchcontenedor{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    }
+    
+    .search{
+      
+      position: absolute;
+      left: 66%;
+      bottom: 5px;
+    }
+    
+}
+
+@media screen and (min-width: 960px){
+  
+    .search{
+      left: 73%;
+        }
+    
+}
+@media screen and (min-width: 1024px){
+  
+  .search{
+    left: 75%;
+      }
+  
+}
+@media screen and (min-width: 1140px){
+  
+  .search{
+    left: 73%;
+      }
+  
+}
+
+@media screen and (min-width: 1260px){
+  
+  .search{
+    left: 90%;
+      }
+  
+}
+@media screen and (min-width: 1320px){
+  
+  .search{
+    left: 79%;
+      }
+  
+}
