@@ -1,5 +1,7 @@
 <main>
 
+
+
     <form action="/admin/novedades/agregar" method="post" class="formnov">
 
         <p>
@@ -20,8 +22,10 @@
         </p>
          <p>
              <label for="imagenes">Imagenes:</label><br/>
+             {{!-- de acá toma el valor para subirlo a la BD  --}}
             <textarea name="imagenes" id="imagenes" rows="1" placeholder="Ingrese el link de la imagen"></textarea>
         </p>
+         
 
         <p>
             <label for="etiquetas">Hashtags:</label><br/>
@@ -40,12 +44,14 @@
 
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <div class="cargarImagen">
+    <button type="button" class="submit-login" data-bs-toggle="modal" data-bs-target="#ModalImagenes">
         Cargar imagen
     </button>
+    </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalImagenes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -57,6 +63,7 @@
                         enctype="multipart/form-data">
 
                         <p>
+                            {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
                             <input type="file" name="images" accept="image/jpeg, image/png">
                         </p>
                         <div class="modal-footer">

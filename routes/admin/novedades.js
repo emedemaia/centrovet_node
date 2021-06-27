@@ -47,7 +47,7 @@ router.get('/asc', async function (req, res, next) {
 //página agregar novedades
 router.get('/agregar', function (req, res, next) {
     res.render('admin/agregar', {
-        layout: 'admin/layout'
+        layout: 'admin/layout',
     });
 });
 
@@ -85,9 +85,9 @@ router.post('/agregar', async (req, res, next) => {
 });
 
 
-router.post('/agregarimg', upload.single('images'), async (req, res, next) => {
+router.post('/agregarimg', upload.single('images'), (req, res, next) => {
 
-            // res.redirect('/admin/novedades');
+          
             res.render('admin/agregar', {
                 layout: 'admin/layout',
                 path: req.file.filename
