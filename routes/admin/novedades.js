@@ -122,6 +122,7 @@ var obj ={
     autor: req.body.autor,
     cuerpo: req.body.cuerpo,
     etiquetas: req.body.etiquetas,
+    imagenes: req.body.imagenes,
 }
 await novedadesModel.modificarNovedadById(obj, req.body.id);
 res.redirect('/admin/novedades');
