@@ -23,7 +23,7 @@ router.post('/', async (req, res, next)=> {
   var obj = {
     from:'CentroVet Website',
     to:'maiaineselias@gmail.com',
-    subject:'Formulario de Contacto de la página web',
+    subject:'Formulario de Contacto de CentroVet',
     html:'Se ha contactado ' + nombre + ', mail ' + email + ' cuya dirección y teléfono figura a continuación (si es que lo ingresó) ' + tel + dir + ' , por el siguiente asunto: ' + asunto + ', dejando el siguiente comentario: ' + comentario 
   };
 
@@ -39,7 +39,18 @@ router.post('/', async (req, res, next)=> {
 
   var info = await transport.sendMail(obj);
 
-  res.render('enviado');
+  transport.sendMail(obj, function (error) {
+    console.log("sendMail returned!");
+    if (error) {
+      console.log("ERROR!!!!!!", error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
+  res.render('index',{
+    message:true,
+  });
 
   // res.send('tu mensaje')
 
