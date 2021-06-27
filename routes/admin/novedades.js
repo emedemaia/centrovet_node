@@ -3,7 +3,7 @@ var router = express.Router();
 var novedadesModel = require('../../models/novedadesmodel')
 var multer = require('multer');
 
-var storage = multer.diskStorage({ destination: 'public/images/uploads/',
+var storage = multer.diskStorage({ destination: 'uploads/',
 filename: function (req, file, cb){
   cb(null, file.originalname) 
 }});
@@ -53,7 +53,7 @@ router.get('/agregar', function (req, res, next) {
 
 
 //insertar novedad, procesa lo del formulario
-router.post('/agregar', upload.single('images'), async (req, res, next) => {
+router.post('/agregar', async (req, res, next) => {
     try {
         var titulo = req.body.titulo;
         var autor = req.body.autor;
@@ -64,6 +64,7 @@ router.post('/agregar', upload.single('images'), async (req, res, next) => {
         if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "") {
             await novedadesModel.insertNovedad(req.body);
             res.redirect('/admin/novedades');
+           
 
         } else {
             res.render('admin/agregar', {
@@ -81,6 +82,16 @@ router.post('/agregar', upload.single('images'), async (req, res, next) => {
         })
     }
 });
+
+
+router.post('/agregarimg', upload.single('images'), async (req, res, next) => {
+   
+            // res.redirect('/admin/novedades');
+            res.render('admin/agregar', {
+                layout: 'admin/layout',
+                path: req.file.path
+                });
+            });
 
 // para eliminar una novedad
 router.get('/eliminar/:id', async(req, res, next)=>{

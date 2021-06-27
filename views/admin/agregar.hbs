@@ -1,6 +1,6 @@
 <main>
 
-    <form action="/admin/novedades/agregar" method="post" class="formnov" enctype="multipart/form-data">
+    <form action="/admin/novedades/agregar" method="post" class="formnov">
 
         <p>
             <textarea name="titulo" placeholder="Título" id="titulo" rows="1"></textarea>
@@ -13,33 +13,68 @@
             </select>
         </p>
 
-       
-        
+
+
         <p>
-            <textarea name="cuerpo" id="cuerpo"  rows="10"
-                placeholder="Ingrese el texto de la novedad"></textarea>
+            <textarea name="cuerpo" id="cuerpo" rows="10" placeholder="Ingrese el texto de la novedad"></textarea>
         </p>
 
-           <p>
+        <p>
             <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"
                 value={{novedad.etiquetas}}>{{novedad.etiquetas}}</textarea>
         </p>
-        <input type="file" name="images" accept="image/jpeg, image/png">
-{{#if error}}
-<p>
-{{message}}
-</p>
-{{/if}}
+        {{#if error}}
+        <p>
+            {{message}}
+        </p>
+        {{/if}}
+
         <button class="submit-login" type="submit">Grabar</button>
         <a class="regresar" href="/admin/novedades">Volver</a>
     </form>
 
-<div class="notacion">
-    <p><b><u>Para dar formato al texto:</u></b></p>
-    <p>Para ingresar un párrafo, escribí entre &lt;p&gt;&lt;/p&gt;</p>
-    <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u> &lt;u&gt;&lt;/u&gt;</p>
-    <p>Para insertar una imagen, escribí &lt;img src="<i>acá ingresá el link a la foto"</i>&gt;</p>
-</div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Cargar imagen
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cargar Imagen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/admin/novedades/agregarimg" method="post" class="formnov"
+                        enctype="multipart/form-data">
+
+                        <p>
+                            <input type="file" name="images" accept="image/jpeg, image/png">
+                        </p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn submit-login">Cargar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{#if path}}
+    <script>alert('copiá este link para insertarlo en tu novedad: <img src="../{{path}}" width="30%" max-width="768px">')</script>{{/if}}
+
+    <div class="notacion">
+        <p><b><u>Para dar formato al texto:</u></b></p>
+        <p>Para ingresar un párrafo, escribí entre &lt;p&gt;&lt;/p&gt;</p>
+        <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u>
+            &lt;u&gt;&lt;/u&gt;</p>
+        <p>Para insertar una imagen, escribí &lt;img src="<i>acá ingresá el link a la foto"</i>&gt;</p>
+    </div>
 
 
 </main>
