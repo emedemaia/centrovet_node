@@ -3,7 +3,7 @@ var router = express.Router();
 var novedadesModel = require('../../models/novedadesmodel')
 var multer = require('multer');
 
-var storage = multer.diskStorage({ destination: 'uploads/',
+var storage = multer.diskStorage({ destination: './public/images/uploads/',
 filename: function (req, file, cb){
   cb(null, file.originalname) 
 }});
@@ -89,7 +89,7 @@ router.post('/agregarimg', upload.single('images'), async (req, res, next) => {
             // res.redirect('/admin/novedades');
             res.render('admin/agregar', {
                 layout: 'admin/layout',
-                path: req.file.path
+                path: req.file.filename
                 });
             });
 
