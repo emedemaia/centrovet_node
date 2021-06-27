@@ -72,7 +72,7 @@ async function getNovedadesMX() {
 async function getNovedadesFechaHora() {
 
 
-    var query = "select id,titulo,autor,cuerpo,etiquetas, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades order by id desc";
+    var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades order by id desc";
 
 
     var rows = await pool.query(query);
@@ -82,7 +82,7 @@ async function getNovedadesFechaHora() {
 
 //buscador
 async function buscarNovedades(busqueda) {
-    var query = "select id,titulo,autor,cuerpo,etiquetas, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades where titulo like ? or autor like ? or cuerpo like ? or etiquetas like ? order by id desc";
+    var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades where titulo like ? or autor like ? or cuerpo like ? or etiquetas like ? order by id desc";
     var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
     return rows;
 }

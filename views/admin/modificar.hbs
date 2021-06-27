@@ -19,8 +19,12 @@
             <textarea name="cuerpo" id="cuerpo" cols="30" rows="10" placeholder="Ingrese el texto de la novedad"
                 value={{novedad.cuerpo}}>{{novedad.cuerpo}}</textarea>
         </p>
-
+        <p><label for="imagenes">Imagenes:</label><br/>
+            <textarea name="imagenes" id="imagenes" rows="1"
+                placeholder="Ingrese el link de la imagen">{{novedad.imagenes}}</textarea>
+        </p>
         <p>
+            <label for="etiquetas">Hashtags:</label><br/>
             <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="hashtags"
                 value={{novedad.etiquetas}}>{{novedad.etiquetas}}</textarea>
         </p>
@@ -35,10 +39,11 @@
     </form>
 
     <div class="notacion">
-    <p><b><u>Para dar formato al texto:</u></b></p>
-    <p>Para ingresar un párrafo, escribí entre &lt;p&gt;&lt;/p&gt;</p>
-    <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u> &lt;u&gt;&lt;/u&gt;</p>
-    <p>Para insertar una imagen, escribí &lt;img src="<i>acá ingresá el link a la foto"</i>&gt;</p>
-</div>
+        <p><b><u>Para dar formato al texto:</u></b></p>
+        <p>Para ingresar un párrafo, escribí entre &lt;p&gt;&lt;/p&gt;</p>
+        <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u>
+            &lt;u&gt;&lt;/u&gt;</p>
+        <p>Para insertar una imagen, escribí &lt;img src="<i>acá ingresá el link a la foto"</i>&gt;</p>
+    </div>
 
 </main>

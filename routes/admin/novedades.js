@@ -59,10 +59,11 @@ router.post('/agregar', async (req, res, next) => {
         var autor = req.body.autor;
         var cuerpo = req.body.cuerpo;
         var etiquetas = req.body.etiquetas;
+        var imagenes = req.body.imagenes;
         
 
         if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "") {
-            await novedadesModel.insertNovedad(req.body);
+            await novedadesModel.insertNovedad(req.body, imagenes);
             res.redirect('/admin/novedades');
            
 
@@ -85,7 +86,7 @@ router.post('/agregar', async (req, res, next) => {
 
 
 router.post('/agregarimg', upload.single('images'), async (req, res, next) => {
-   
+
             // res.redirect('/admin/novedades');
             res.render('admin/agregar', {
                 layout: 'admin/layout',

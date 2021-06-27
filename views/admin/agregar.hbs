@@ -18,10 +18,15 @@
         <p>
             <textarea name="cuerpo" id="cuerpo" rows="10" placeholder="Ingrese el texto de la novedad"></textarea>
         </p>
+         <p>
+             <label for="imagenes">Imagenes:</label><br/>
+            <textarea name="imagenes" id="imagenes" rows="1" placeholder="Ingrese el link de la imagen"></textarea>
+        </p>
 
         <p>
+            <label for="etiquetas">Hashtags:</label><br/>
             <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"
-                value={{novedad.etiquetas}}>{{novedad.etiquetas}}</textarea>
+               ></textarea>
         </p>
         {{#if error}}
         <p>
@@ -55,7 +60,7 @@
                             <input type="file" name="images" accept="image/jpeg, image/png">
                         </p>
                         <div class="modal-footer">
-                            <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button>
+                            {{!-- <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button> --}}
                             <button type="submit" class="btn submit-login">Cargar</button>
                         </div>
                     </form>
@@ -66,7 +71,7 @@
     </div>
 
     {{#if path}}
-    <script>alert('copiá este link para insertarlo en tu novedad: <img src="images/uploads/{{path}}" width="30%" max-width="768px">')</script>{{/if}}
+    <script>alert('copiá este link para insertarlo en tu novedad y pegalo en el campo imagen: \n <img src="images/uploads/{{path}}" width="100%" max-width="768px">')</script>{{/if}}
 
     <div class="notacion">
         <p><b><u>Para dar formato al texto:</u></b></p>
