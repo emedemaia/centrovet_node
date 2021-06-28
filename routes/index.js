@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 //formulario de contacto
 router.post('/', async (req, res, next)=> {
-
+try{
   var nombre = req.body.nombre;
   var email = req.body.email;
   var tel = req.body.tel;
@@ -49,21 +49,30 @@ transport.verify(function(error, success) {
   }
 });
 
-  var info = await transport.sendMail(obj, function (error) {
+ var info = await transport.sendMail(obj);
 
     console.log("sendMail returned!");
-    if (error) {
-      console.log("ERROR!!!!!!", error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
+    console.log('Email sent: ' + info.response);
+    
+    res.render('index',{
+      message:true,
+    });
+    
+   
+     
+    
+  
+}catch(error){
+  console.log("ERROR!!!!!!", error);
+  res.render('index',{
+    messageError:true,
   });
+}
+
 
   // transport.close();
 
-  res.render('index',{
-    message:true,
-  });
+  
 
   // res.send('tu mensaje')
 
