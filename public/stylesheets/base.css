@@ -228,6 +228,10 @@ p {
 
 /* INICIO CV */
 
+.cvmodal {
+    display: none;
+}
+
 .cv {
     width: 80%;
     border: 1px solid #9D8189;
@@ -423,7 +427,6 @@ p {
     text-transform: capitalize;
 }
 
-
 .bajada p {
     margin-bottom: 0;
     font-size: 0.7em;
@@ -433,15 +436,13 @@ p {
     color: #cc869c;
     text-align: left;
     padding-left: 0.7em;
-  
 }
 
 .contenido p {
     color: rgb(43, 42, 42);
     text-align: left;
     font-weight: 400;
-  margin: 10px;
-  
+    margin: 10px;
 }
 
 hr {
@@ -453,44 +454,39 @@ hr {
     margin-bottom: 0;
 }
 
-
-
 .etiquetas p {
     text-align: left;
     margin-bottom: 0;
     padding-left: 0.3em;
     font-size: 1em;
-   
 }
-    
-    .searchcontenedor{
-        width: 90%;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 50px;
-      }
 
-  
-  .search input{
+.searchcontenedor {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 50px;
+}
+
+.search input {
     border-radius: 10px;
     border: 1px solid #ccc;
     padding: 5px;
-  }
-  
-  .button-search{
+}
+
+.button-search {
     background-color: #9D8189;
     color: white;
     border: none;
     border-radius: 10px;
-  height: 33px;
-  width: 33px;
-    
-  }
-  
-  .resultado{
+    height: 33px;
+    width: 33px;
+}
+
+.resultado {
     width: 95%;
     margin: 5px auto;
-  }
+}
 
 /* ICOMOON NOVEDADES */
 
@@ -827,23 +823,43 @@ footer {
         justify-content: space-evenly;
         margin: 30px 0;
     }
-    .cv, .cvacordeon, .cv2 {
+    .cv, .cv2 {
+        display: flex;
+        flex-wrap: wrap;
         width: 150px;
-        border: 1px dotted #9D8189;
+        border-bottom: 1px solid #9D8189;
+        height: 350px;
+        overflow: hidden;
     }
     .cvacordeon {
-        margin: 0;
+        display: none;
     }
-    .cv, .cv2 {
-        display: inline-flex;
-        flex-wrap: wrap;
+    .cvmodal {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        bottom: 10px;
     }
-    .cv {
-        height: 400px;
+    .cvmodal a {
+        color: #674e56;
+        display: inline-block;
+        font-weight: 400;
+        width: 100%;
+        text-align: center;
+        background-color: #F5C1DD;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
     }
-    .cv2 {
-        height: 453px;
+    .cvmodal a:hover {
+        background-color: #9D8189;
+        color: white;
     }
+
+    .cvmodal a:active{
+        background-color: #674e56;
+    }
+
     .cvimg {
         width: 100%;
         height: 191px;
@@ -854,12 +870,6 @@ footer {
     .vete {
         width: 100%;
         align-self: flex-start;
-    }
-    .sole .vete {
-        margin-bottom: 50px;
-    }
-    .nosole .vete {
-        margin-bottom: 145px;
     }
     .vete p, .cvacordeon span {
         font-size: 0.9em;
@@ -896,11 +906,9 @@ footer {
     .icon-calendar {
         margin-left: 1.5em;
     }
-   
-    .searchcontenedor{
+    .searchcontenedor {
         justify-content: flex-end;
-      }
-   
+    }
     /* FIN NOVEDADES */
     /* INICIO FOOTER */
     footer {
@@ -949,6 +957,24 @@ footer {
     .titulo h2 {
         font-size: 1.4em;
     }
+
+    /*INICIO CV */
+
+    /* FIN CV */
+    .cv, .cv2{
+   display: inline-block;
+        width: 200px;
+        height: 450px;
+    }
+
+    .cvmodal{
+       top:85px;
+    }
+
+    .vete{
+        position: relative;
+        top: 85px;
+    }
     /* FIN EQUIPO */
     /* INICIO SERVICIOS */
     .servicios {
@@ -970,8 +996,6 @@ footer {
         font-size: 0.9em;
     }
     /* FIN SERVICIOS */
-
-
     /* INICIO CONTACTO */
     .formulario {
         margin: 50px auto;
@@ -1063,15 +1087,16 @@ footer {
     .vete p {
         font-size: 1em;
     }
-    .cv, .cvacordeon, .cv2 {
-        width: 200px;
+  
+    .cv, .cv2{
+        height: 474px;
     }
-    .sole .vete {
-        margin-bottom: -71px;
-    }
-    .nosole .vete {
-        margin-bottom: 35px;
-    }
+
+    .cvmodal{
+        top:85px;
+     }
+
+  
     /* FIN EQUIPO */
     /* INICIO SERVICIOS */
     .posicionar2 {
@@ -1292,6 +1317,11 @@ footer {
     }
     /* FIN EQUIPO */
     /* INICIO CV */
+    
+    .cvmodal{
+        top:94px;
+     }
+
     /* FIN CV */
     /* INICIO SERVICIOS */
     .posicionar {
