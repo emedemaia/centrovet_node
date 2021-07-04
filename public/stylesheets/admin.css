@@ -144,6 +144,7 @@ input::placeholder {
 }
 
 .boton {
+  display: block;
   border: none;
   border-radius: 10px;
   width: 120px;
@@ -151,7 +152,6 @@ input::placeholder {
   height: 35px;
   padding: 7px;
   box-sizing: border-box;
-  display: block;
   color: white ;
   background-color: #572937;
   text-decoration: none;
