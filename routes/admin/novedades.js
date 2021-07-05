@@ -123,7 +123,7 @@ router.get('/preview/:id', async(req, res, next)=>{
     var mx = await novedadesModel.getNovedadesMX();
 
 
-    res.render('/admin/preview',{
+    res.render('admin/preview',{
         layout: 'admin/layout',
         mx,
         novedad
