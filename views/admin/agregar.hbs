@@ -9,11 +9,15 @@
                 {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
                 <input type="file" name="images" accept="image/jpeg, image/png" class="tituloartic">
             </p>
-<input type="hidden" value="{{filename}}" name="filename">
+
             {{!-- <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button> --}}
             <button type="submit" class="btn submit-login pasosContenedor">Cargar</button>
 
         </form>
+        {{#if imagencargada}}
+        <p>Tu imagen ha sido cargada. Continúa con el paso 2.</p>
+        {{/if}}
+
     </div>
 
     <div class="pasosContenedor formnov tituloartic">
@@ -41,6 +45,7 @@
             <label for="imagenes">Imagen (no borrar este contenido):</label><br />
             {{!-- de acá toma el valor para subirlo a la BD --}}
             <textarea name="imagenes" id="imagenes" rows="1" placeholder="Ingrese el link de la imagen"><img src="images/uploads/{{filename}}" width="100%" max-width="768px"></textarea>
+            <input type="hidden" value="{{filename}}" name="filename">
         </p>
 
 

@@ -60,7 +60,7 @@ router.post('/agregar', async (req, res, next) => {
         var cuerpo = req.body.cuerpo;
         var etiquetas = req.body.etiquetas;
         var imagenes = req.body.imagenes;
-        var filename = req.body.filename
+        var filename = req.body.filename;
         
 
         if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "") {
@@ -91,7 +91,8 @@ router.post('/agregarimg', upload.single('images'), (req, res, next) => {
           
             res.render('admin/agregar', {
                 layout: 'admin/layout',
-                filename: req.file.filename
+                filename: req.file.filename,
+                imagencargada:true
                 });
             });
 
@@ -122,7 +123,7 @@ router.get('/preview/:id', async(req, res, next)=>{
     var mx = await novedadesModel.getNovedadesMX();
 
 
-    res.render('admin/preview',{
+    res.render('/admin/preview',{
         layout: 'admin/layout',
         mx,
         novedad
