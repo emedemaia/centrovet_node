@@ -1,0 +1,45 @@
+<main>
+<div class="novedadestitulo" id="novedades">
+        <h2>Previsualización</h2>
+    </div>
+
+
+
+   
+    <div class="container-fluid novedades" value={{id}}>
+        <div class="row">
+            <div class="col">
+                <h3>{{novedad.titulo}}</h3>
+            </div>
+        </div>
+
+        <div class="row bajada">
+            <div class="col">
+                <p class="fecha">{{novedad.fechahora}} hs</p>
+                <span class="icon-calendar"></span>
+                <span class="icon-clock">-</span>
+                <p class="autor">{{novedad.autor}}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col contenido">
+                <p>{{{novedad.cuerpo}}}
+                    
+                </p>
+                <p><img src="../../../images/uploads/{{{novedad.filename}}}"  width="100%" max-width="768px"/></p>
+            </div>
+        </div>
+        <hr class="etiquetahr">
+          <div class="row">
+            <div class="col etiquetas">
+                <p>{{novedad.etiquetas}}
+                </p>
+            </div>
+        </div>
+    </div>
+   
+
+
+
+</main>

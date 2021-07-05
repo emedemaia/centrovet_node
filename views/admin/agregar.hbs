@@ -1,11 +1,28 @@
 <main>
 
-<h3 class="icon-number">Paso 1</h3>
+    <div class="pasosContenedor formnov">
+        <h4 class="icon-number pasos"> Paso 1 - Agregar imagen </h4>
+        <p class="pasosContenedor">Si tu artículo contiene una imagen, cargala acá primero (seleccionala y apretá el botón cargar). <br>Caso contrario omití este paso y continuá con el Paso 2 (escribir artículo).</p>
+        <form action="/admin/novedades/agregarimg" method="post"  enctype="multipart/form-data">
 
-    <form action="/admin/novedades/agregar" method="post" class="formnov">
+            <p>
+                {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
+                <input type="file" name="images" accept="image/jpeg, image/png" class="tituloartic">
+            </p>
+<input type="hidden" value="{{filename}}" name="filename">
+            {{!-- <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button> --}}
+            <button type="submit" class="btn submit-login pasosContenedor">Cargar</button>
+
+        </form>
+    </div>
+
+    <div class="pasosContenedor formnov tituloartic">
+        <h4 class="icon-number1 pasos"> Paso 2 - Escribir artículo </h4>
+        <p class="pasosContenedor">Agregá el título, autor y texto. Recordá seguir las recomendaciones para darle formato al texto que se encuentran al final de la página.</p>
+    <form action="/admin/novedades/agregar" method="post">
 
         <p>
-            <textarea name="titulo" placeholder="Título" id="titulo" rows="1"></textarea>
+            <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic"></textarea>
         </p>
 
         <p>
@@ -20,17 +37,16 @@
         <p>
             <textarea name="cuerpo" id="cuerpo" rows="10" placeholder="Ingrese el texto de la novedad"></textarea>
         </p>
-         <p>
-             <label for="imagenes">Imagenes:</label><br/>
-             {{!-- de acá toma el valor para subirlo a la BD  --}}
-            <textarea name="imagenes" id="imagenes" rows="1" placeholder="Ingrese el link de la imagen"></textarea>
+        <p>
+            <label for="imagenes">Imagen (no borrar este contenido):</label><br />
+            {{!-- de acá toma el valor para subirlo a la BD --}}
+            <textarea name="imagenes" id="imagenes" rows="1" placeholder="Ingrese el link de la imagen"><img src="images/uploads/{{filename}}" width="100%" max-width="768px"></textarea>
         </p>
-         
+
 
         <p>
-            <label for="etiquetas">Hashtags:</label><br/>
-            <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"
-               ></textarea>
+            <label for="etiquetas">Hashtags:</label><br />
+            <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"></textarea>
         </p>
         {{#if error}}
         <p>
@@ -41,51 +57,14 @@
         <button class="submit-login" type="submit">Grabar</button>
         <a class="regresar" href="/admin/novedades">Volver</a>
     </form>
+</div>
 
-
-    <!-- Button trigger modal -->
-    <div class="cargarImagen">
-    <button type="button" class="submit-login" data-bs-toggle="modal" data-bs-target="#ModalImagenes">
-        Cargar imagen
-    </button>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="ModalImagenes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cargar Imagen</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="/admin/novedades/agregarimg" method="post" class="formnov"
-                        enctype="multipart/form-data">
-
-                        <p>
-                            {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
-                            <input type="file" name="images" accept="image/jpeg, image/png">
-                        </p>
-                        <div class="modal-footer">
-                            {{!-- <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button> --}}
-                            <button type="submit" class="btn submit-login">Cargar</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    {{#if path}}
-    <script>alert('copiá este link para insertarlo en tu novedad y pegalo en el campo imagen: \n <img src="images/uploads/{{path}}" width="100%" max-width="768px">')</script>{{/if}}
-
+    
     <div class="notacion">
         <p><b><u>Para dar formato al texto:</u></b></p>
         <p>Para ingresar un párrafo, escribí entre &lt;p&gt;&lt;/p&gt;</p>
         <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u>
             &lt;u&gt;&lt;/u&gt;</p>
-        <p>Para insertar una imagen, escribí &lt;img src="<i>acá ingresá el link a la foto"</i>&gt;</p>
     </div>
 
 
