@@ -175,11 +175,8 @@ h3 {
 
 .imgbienvenida {
     margin: 30px auto;
-    text-align: center;
-  
-  
+    text-align: center;  
 }
-
 
 
 .globulosrojos {
@@ -188,7 +185,9 @@ h3 {
     width: 100%;
     max-width: 600px;
     border-radius: 10px;
+    box-shadow: 0 0 15px #9D8189  ;
 }
+
 
 p {
     color: #674e56;
@@ -340,16 +339,13 @@ p {
 }
 
 .servicios {
-    /* box-shadow: 0 0 10px 0 #83045e; */
-    border: 1px dotted #9D8189;
+    box-shadow: 0 0 15px #9D8189 ;
+    /* border: 1px solid #9D8189; */
     border-radius: 20px;
     margin: 20px auto;
     /* padding: 10px; */
 }
 
-.col-xl-5 {
-    margin: 0;
-}
 
 .servicios img {
     max-width: 200px;
@@ -557,11 +553,19 @@ hr {
 }
 
 .formulario {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 20px auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #9D8189 ;
+    padding: 10px;
+         border-radius: 20px;
+}
+
+.divform{
+    width: 90%;
 }
 
 h4 {
@@ -579,8 +583,10 @@ h4 {
 }
 
 .formulario p input {
-    width: 250px;
-    border: 0.5px dotted #9D8189;
+    width: 100%;
+    border: 0.5px solid #b3acae;
+    border-radius: 5px;
+
 }
 
 ::placeholder {
@@ -621,8 +627,9 @@ h4 {
 .formulario textarea {
     resize: none;
     vertical-align: top;
-    border: 0.5px dotted #9D8189;
-    width: 250px;
+    border: 0.5px solid #b3acae;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .contacto {
@@ -945,12 +952,7 @@ footer {
         margin-top: 30px;
         width: 700px;
     }
-    .globulosrojos {
-        background: no-repeat center/400px url(../images/globulosryb2.jpg);
-        min-height: 300px;
-        min-width: 350px;
-        margin: 0 auto;
-    }
+   
     p {
         font-size: 0.9em;
     }
@@ -994,7 +996,7 @@ footer {
     .servicios p {
         text-align: left;
         margin: 0 auto;
-        width: 310px;
+        width: 280px;
     }
     .serv2 a {
         margin-top: 114px;
@@ -1005,14 +1007,17 @@ footer {
     /* FIN SERVICIOS */
     /* INICIO CONTACTO */
     .formulario {
+        width: 70%;
         margin: 50px auto;
+         box-shadow: 0 0 10px #9D8189 ;
+         border-radius: 20px;
+    padding: 50px; 
     }
+
     .formulario h4 {
         margin-bottom: 50px;
     }
-    .formulario p input {
-        width: 500px;
-    }
+    
     .mapa {
         margin-top: 50px;
     }
@@ -1022,9 +1027,7 @@ footer {
     .redes {
         margin-top: 55px;
     }
-    .formulario textarea {
-        width: 500px;
-    }
+   
     .formulario input[type="submit"], .formulario input[type="reset"] {
         width: 7em;
         padding: 10px;
@@ -1120,7 +1123,7 @@ footer {
         margin-bottom: 20px;
     }
     .servicios p {
-        width: 400px;
+        width: 380px;
         margin: 0 auto;
     }
     .serv2 a {
@@ -1129,9 +1132,9 @@ footer {
     }
     /* FIN SERVICIOS */
     /* INICIO CONTACTO */
-    .formulario {
-        width: 100%;
-    }
+  .formulario{
+      width: 50%;
+  }
     /* FIN CONTACTO */
     /* INICIO FOOTER */
     footer {
@@ -1221,9 +1224,7 @@ footer {
     .formulario h4 {
         margin-bottom: 50px;
     }
-    .formulario p input {
-        width: 500px;
-    }
+    
     .formulario input[type="submit"], .formulario input[type="reset"] {
         width: 7em;
         padding: 10px;
@@ -1291,12 +1292,7 @@ footer {
     .imgbienvenida {
         margin-bottom: 50px;
     }
-    .globulosrojos {
-        background: no-repeat bottom/600px url(../images/globulosryb2.jpg);
-        min-height: 400px;
-        min-width: 150px;
-        margin: 0 auto;
-    }
+    
     p {
         font-size: 1.05em;
         line-height: 2.1;
@@ -1365,15 +1361,11 @@ footer {
     .formulario h4 {
         margin-bottom: 50px;
     }
-    .formulario p input {
-        width: 500px;
-    }
+   
     .redes {
         margin-top: 55px;
     }
-    .formulario textarea {
-        width: 500px;
-    }
+   
     .formulario input[type="submit"], .formulario input[type="reset"] {
         width: 7em;
         padding: 10px;

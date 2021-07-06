@@ -20,16 +20,12 @@ color fecha gris claro: #b3acae
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?861tgw');
-  src:  url('../fonts/icomoon.eot?861tgw#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?861tgw') format('truetype'),
-    url('../fonts/icomoon.woff?861tgw') format('woff'),
-    url('../fonts/icomoon.svg?861tgw#icomoon') format('svg');
+  src: url('../fonts/icomoon.eot?861tgw');
+  src: url('../fonts/icomoon.eot?861tgw#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?861tgw') format('truetype'), url('../fonts/icomoon.woff?861tgw') format('woff'), url('../fonts/icomoon.svg?861tgw#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-
 
 body {
   margin: 0;
@@ -46,7 +42,6 @@ header {
 }
 
 header img {
-  
   max-width: 350px;
 }
 
@@ -60,7 +55,6 @@ h3 {
   text-align: center;
   color: #83045e;
 }
-
 
 /* INICIO FOOTER */
 
@@ -78,14 +72,18 @@ footer {
 /* COMIENZO FORMULARIO LOGIN */
 
 .formulariologin {
-  margin: 100px auto;
-  width: 300px;
+  margin: 50px auto;
+  width: 60%;
+  text-align: center;
+  box-shadow: 0 0 10px #9D8189;
+  padding: 30px;
+  border-radius: 20px;
 }
 
 .formulariologin input {
   border-radius: 10px;
   border: 1px solid #ccc;
-  width: 300px;
+  width: 90%;
   padding: 5px;
 }
 
@@ -120,10 +118,10 @@ input::placeholder {
 
 /* FIN FORMULARIO LOGIN */
 
-
 /* COMIENZO NOVEDADES */
 
 /*heading novedades*/
+
 .inicio {
   margin: 10px auto;
   width: 95%;
@@ -144,9 +142,9 @@ input::placeholder {
   text-transform: capitalize;
 }
 
-.cerrar{
+.cerrar {
   padding: 5px;
- align-self: center;
+  align-self: center;
 }
 
 .cerrarses, .nuevobtn {
@@ -156,8 +154,7 @@ input::placeholder {
   text-decoration: none;
 }
 
-
-.orden{
+.orden {
   width: 95%;
   margin: 0 auto;
   display: flex;
@@ -173,52 +170,49 @@ input::placeholder {
   height: 35px;
   padding: 7px;
   box-sizing: border-box;
-  color: white ;
+  color: white;
   background-color: #572937;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   text-align: center;
   margin-right: 10px;
   font-size: 0.9em;
- 
 }
 
-.off{
-  background-color: #9D8189 ;
+.off {
+  background-color: #9D8189;
 }
 
-.boton:hover{
+.boton:hover {
   background-color: #9D8189;
   color: white;
 }
 
-.searchcontenedor{
+.searchcontenedor {
   width: 95%;
   margin: 10px auto;
 }
 
-
-
-.search input{
+.search input {
   border-radius: 10px;
   border: 1px solid #ccc;
   padding: 5px;
 }
 
-.button-search{
+.button-search {
   background-color: #9D8189;
   color: white;
   border: none;
   border-radius: 10px;
-height: 33px;
-width: 33px;
-  
+  height: 33px;
+  width: 33px;
 }
 
-.resultado{
+.resultado {
   width: 95%;
   margin: 5px auto;
 }
+
 /*fin heading novedades*/
 
 /*tabla novedades*/
@@ -307,39 +301,45 @@ width: 33px;
   padding: 5px;
 }
 
-.cargarImagen{
- margin: 10px auto; 
- width: 80%;
+.cargarImagen {
+  margin: 10px auto;
+  width: 80%;
 }
 
-.pasos{
+.pasos {
   color: #674e56;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5c1dd+1,f4cbe1+19,f4cbe1+19,f4deea+39,f9f9f9+78 */
-background: #f5c1dd; /* Old browsers */
-background: -moz-linear-gradient(left,  #f5c1dd 1%, #f4cbe1 19%, #f4cbe1 19%, #f4deea 39%, #ffffff 78%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #f5c1dd 1%,#f4cbe1 19%,#f4cbe1 19%,#f4deea 39%,#ffffff 78%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #f5c1dd 1%,#f4cbe1 19%,#f4cbe1 19%,#f4deea 39%,#ffffff 78%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5c1dd', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 */
-
-border-radius: 20px;
-padding: 5px;
+  background: #f5c1dd;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #f5c1dd 1%, #f4cbe1 19%, #f4cbe1 19%, #f4deea 39%, #ffffff 78%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #f5c1dd 1%, #f4cbe1 19%, #f4cbe1 19%, #f4deea 39%, #ffffff 78%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #f5c1dd 1%, #f4cbe1 19%, #f4cbe1 19%, #f4deea 39%, #ffffff 78%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5c1dd', endColorstr='#f9f9f9', GradientType=1);
+  /* IE6-9 */
+  border-radius: 20px;
+  padding: 5px;
 }
 
-.pasosContenedor{
+.pasosContenedor {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.pasosContenedor h4{
+.pasosContenedor h4 {
   margin: 20px 0 40px;
 }
 
-.tituloartic{
-margin-top: 30px;
+.tituloartic {
+  margin-top: 30px;
 }
+
 /* fin agregar novedades */
 
 /* ICOMOON NOVEDADES */
+
 .icon-clock:before {
   font-family: 'icomoon';
   content: "\e94e";
@@ -363,14 +363,15 @@ margin-top: 30px;
   content: "\e904";
   color: #674e56;
   position: relative;
-  top:2px;
+  top: 2px;
 }
+
 .icon-number1:before {
   font-family: 'icomoon';
   content: "\e905";
   color: #674e56;
   position: relative;
-  top:2px;
+  top: 2px;
 }
 
 .icon-number2:before {
@@ -378,16 +379,19 @@ margin-top: 30px;
   content: "\e906";
   color: #674e56;
 }
+
 .icon-number3:before {
   font-family: 'icomoon';
   content: "\e907";
   color: #674e56;
 }
+
 .icon-number4:before {
   font-family: 'icomoon';
   content: "\e908";
   color: #674e56;
 }
+
 .icon-number5:before {
   font-family: 'icomoon';
   content: "\e909";
@@ -397,7 +401,6 @@ margin-top: 30px;
 /* ICOMOON NOVEDADES */
 
 /* previsualizar novedades */
-
 
 .novedadestitulo {
   padding: 50px 0;
@@ -422,7 +425,6 @@ margin-top: 30px;
   margin-bottom: 5px;
   line-height: 1em;
 }
-
 
 .bajada div {
   display: flex;
@@ -453,7 +455,6 @@ margin-top: 30px;
   font-weight: 300;
 }
 
-
 .contenido p {
   color: rgb(43, 42, 42);
   text-align: left;
@@ -482,55 +483,69 @@ hr {
 
 /* FIN NOVEDADES */
 
-@media screen and (min-width: 720px){
-  .searchcontenedor{
+@media screen and (min-width: 576px) {
+  .formulariologin {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .searchcontenedor {
     position: relative;
     margin: 0;
     width: 100%;
-    }
-    
-    .search{
-      
-      position: absolute;
-      left: 66%;
-      bottom: 5px;
-    }
-    
+  }
+  .search {
+    position: absolute;
+    left: 66%;
+    bottom: 5px;
+  }
+  .formulariologin {
+    width: 40%;
+  }
+
+  .formulariologin input{
+    width: 100%;
+  }
 }
 
-@media screen and (min-width: 960px){
-  
-    .search{
-      left: 73%;
-        }
-    
-}
-@media screen and (min-width: 1024px){
-  
-  .search{
-    left: 75%;
-      }
-  
-}
-@media screen and (min-width: 1140px){
-  
-  .search{
+@media screen and (min-width: 960px) {
+  .search {
     left: 73%;
-      }
-  
+  }
+  .formulariologin {
+    width: 30%;
+  }
 }
 
-@media screen and (min-width: 1260px){
-  
-  .search{
-    left: 90%;
-      }
-  
+@media screen and (min-width: 1024px) {
+  .search {
+    left: 75%;
+  }
+  .formulariologin {
+    width: 30%;
+  }
+ 
 }
-@media screen and (min-width: 1320px){
-  
-  .search{
+
+@media screen and (min-width: 1140px) {
+  .search {
+    left: 73%;
+  }
+}
+
+@media screen and (min-width: 1260px) {
+  .search {
+    left: 90%;
+  }
+
+  .formulariologin {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  .search {
     left: 79%;
-      }
-  
+  }
 }
