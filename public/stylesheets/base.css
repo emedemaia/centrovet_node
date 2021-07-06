@@ -176,15 +176,18 @@ h3 {
 .imgbienvenida {
     margin: 30px auto;
     text-align: center;
-    overflow: hidden;
+  
+  
 }
 
+
+
 .globulosrojos {
-    background: no-repeat top/300px url(../images/globulosryb2.jpg);
+    /* background: no-repeat top/300px url(../images/globulosryb2.jpg); */
     /* fixed para parallax*/
-    min-height: 200px;
-    min-width: 50px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
 }
 
 p {
@@ -341,7 +344,11 @@ p {
     border: 1px dotted #9D8189;
     border-radius: 20px;
     margin: 20px auto;
-    padding: 10px;
+    /* padding: 10px; */
+}
+
+.col-xl-5 {
+    margin: 0;
 }
 
 .servicios img {
