@@ -166,12 +166,12 @@ console.log(obj);
 //para listar las fotos de la carpeta upload
 
 
-    var filenames = fs.readdirSync('../images/uploads')
+//     var filenames = fs.readdirSync('../images/uploads')
         
-console.log("\nCurrent directory filenames:");
-filenames.forEach(file => {
-    console.log(file);
-  });
+// console.log("\nCurrent directory filenames:");
+// filenames.forEach(file => {
+//     console.log(file);
+//   });
 
-module.exports = router;
+// module.exports = router;
 
