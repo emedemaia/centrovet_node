@@ -6,14 +6,34 @@
         <h2>NOVEDADES</h2>
     </div>
 
-<div class="searchcontenedor">
+    <div class="container d-sm-none search">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <form action="novedades" method="get">
 
-        <form action="novedades" method="get" class="search">
-            
-            <input type="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
-            <button type="submit" class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </form>
+                    <label for="search" class="button-search">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </label>
+                    <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
 
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-none d-sm-block search">
+        <div class="row justify-content-end">
+            <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                <form action="novedades" method="get" class="search">
+
+                    <label for="search" class="button-search">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </label>
+                    <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
+
+                </form>
+            </div>
+        </div>
     </div>
 
     {{#each novedades}}
@@ -36,13 +56,13 @@
         <div class="row">
             <div class="col contenido">
                 <p>{{{cuerpo}}}
-                    
+
                 </p>
-                <p>{{{imagenes}}}</p>
+                <p class="imagen-novedad">{{{imagenes}}}</p>
             </div>
         </div>
         <hr class="etiquetahr">
-          <div class="row">
+        <div class="row">
             <div class="col etiquetas">
                 <p>{{etiquetas}}
                 </p>
@@ -51,7 +71,7 @@
     </div>
     {{/each}}
 
-<div class="resultado">
+    <div class="resultado">
         {{#if is_search}}
         {{#unless novedades.length}}
         No se encontraron resultados para "<b>{{q}}</b>".

@@ -16,6 +16,9 @@ más oscuro:#674e56
 
 color fecha gris claro: #b3acae
   color autor: #cc869c;
+
+    box-shadow: #b3acae;
+  
 */
 
 @font-face {
@@ -75,9 +78,10 @@ footer {
   margin: 50px auto;
   width: 60%;
   text-align: center;
-  box-shadow: 0 0 10px #9D8189;
+  box-shadow: 0 0 10px #b3acae;
   padding: 30px;
   border-radius: 20px;
+ 
 }
 
 .formulariologin input {
@@ -188,26 +192,28 @@ input::placeholder {
   color: white;
 }
 
-.searchcontenedor {
-  width: 95%;
-  margin: 10px auto;
+
+.search{
+  margin: 0 auto 20px;
 }
 
-.search input {
+.button-search{
+  position:relative;
+  top:28px;
+  left: 7px;
+}
+
+.search input{
+  width: 100%;
   border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 5px;
+border: 1px solid #ccc;
+  padding: 5px 23px 5px 30px;
+
 }
 
-.button-search {
-  background-color: #9D8189;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  height: 33px;
-  width: 33px;
+.search input::placeholder{
+  font-weight: 400;
 }
-
 .resultado {
   width: 95%;
   margin: 5px auto;
@@ -231,6 +237,8 @@ input::placeholder {
 .table {
   margin: 5px auto 20px;
   width: 95%;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .thead {
@@ -304,6 +312,14 @@ input::placeholder {
 .cargarImagen {
   margin: 10px auto;
   width: 80%;
+}
+
+.img-cargada{
+  margin: 10px;
+  color:darkmagenta;
+  background-color:lightpink; 
+  text-align: center; 
+  border-radius:10px
 }
 
 .pasos {
@@ -416,8 +432,12 @@ input::placeholder {
 
 .novedades {
   margin-bottom: 50px;
-  border: 0.5px dotted #674e56;
+ padding: 10px;
   width: 90%;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 0 0 20px #b3acae;
+ 
 }
 
 .novedades h3 {
@@ -463,6 +483,18 @@ input::placeholder {
   margin: 10px;
 }
 
+.imagen-novedad{
+  display: flex;
+  justify-content: center;
+  }
+  
+  .imagen-novedad img{
+      width: 100%;
+      max-width: 500px;
+  }
+  
+
+
 hr {
   margin: 0;
   margin-bottom: 1em;
@@ -479,6 +511,11 @@ hr {
   font-size: 1em;
 }
 
+.regresar-centro{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
 /* previsualizar novedades*/
 
 /* FIN NOVEDADES */

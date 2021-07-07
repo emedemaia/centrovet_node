@@ -16,6 +16,8 @@ más oscuro:#674e56
 
 color fecha gris claro: #b3acae
   color autor: #cc869c;
+
+  box shadow:#b3acae;
 */
 
 @font-face {
@@ -175,9 +177,8 @@ h3 {
 
 .imgbienvenida {
     margin: 30px auto;
-    text-align: center;  
+    text-align: center;
 }
-
 
 .globulosrojos {
     /* background: no-repeat top/300px url(../images/globulosryb2.jpg); */
@@ -185,9 +186,9 @@ h3 {
     width: 100%;
     max-width: 600px;
     border-radius: 10px;
-    box-shadow: 0 0 15px #9D8189  ;
+    box-shadow: 0 0 15px #9D8189;
+    
 }
-
 
 p {
     color: #674e56;
@@ -230,17 +231,19 @@ p {
 
 /* INICIO CV */
 
-.cvmodal, .cvmodal a {
+/* .cvmodal, .cvmodal a {
     display: none;
-}
+} */
 
 .cv {
     width: 80%;
-    border: 1px solid #9D8189;
-    border-bottom: none;
+    /* border: 1px solid #b3acae; */
     margin: 20px auto 0;
     display: flex;
-    /* border-radius: 10px 10px 0 0; */
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #b3acae;
+    overflow: hidden;
 }
 
 .cvimg {
@@ -251,6 +254,7 @@ p {
     max-width: 100%;
     padding: 10px;
     margin: 0 auto;
+    border-radius: 20px;
 }
 
 .vete {
@@ -268,52 +272,39 @@ p {
 
 .cv2 {
     width: 80%;
-    border: 1px solid #9D8189;
+    /* border: 1px solid #9D8189; */
     margin: 20px auto 25px;
     display: flex;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #b3acae;
 }
 
-.cvacordeon {
-    width: 80%;
-    border: 1px solid #9D8189;
-    border-top: none;
-    margin: 0 auto 25px;
-    /* border-radius: 0 0 10px 10px; */
-    /* overflow: hidden; */
-    line-height: 2em;
-    z-index: 0;
-}
 
-.accordion-button {
+
+.cvmodal {
+    display: flex;
     justify-content: center;
+    width: 100%;
+  
 }
 
-.collapsed {
-    color: rgb(55, 48, 48);
+.cvmodal a {
+    color: #674e56;
+    display: inline-block;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
     background-color: #F5C1DD;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
-
-.accordion-button:not(.collapsed) {
-    color: white;
+.cvmodal a:hover {
     background-color: #9D8189;
+    color: white;
 }
-
-.accordion-button:not(.collapsed)::after {
-    background-image: none;
-    content: "";
-    background: no-repeat center/80% url(../images/circle-down.svg);
-    opacity: 8 0%;
-    filter: invert();
+.cvmodal a:active {
+    background-color: #674e56;
 }
-
-.accordion-button::after {
-    background-image: none;
-    content: "";
-    background: no-repeat center/80% url(../images/circle-down.svg);
-    opacity: 60%;
-    margin-left: 0;
-}
-
 /* FIN CV */
 
 /* FIN EQUIPO */
@@ -339,13 +330,13 @@ p {
 }
 
 .servicios {
-    box-shadow: 0 0 15px #9D8189 ;
+    box-shadow: 0 0 15px #b3acae;
     /* border: 1px solid #9D8189; */
     border-radius: 20px;
     margin: 20px auto;
     /* padding: 10px; */
+    /* background-color: whitesmoke; */
 }
-
 
 .servicios img {
     max-width: 200px;
@@ -407,8 +398,12 @@ p {
 
 .novedades {
     margin-bottom: 50px;
-    border: 0.5px dotted #674e56;
+   padding: 10px;
     width: 90%;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 20px #b3acae;
+   
 }
 
 .novedades h3 {
@@ -448,6 +443,16 @@ p {
     margin: 10px;
 }
 
+.imagen-novedad{
+display: flex;
+justify-content: center;
+}
+
+.imagen-novedad img{
+    width: 100%;
+    max-width: 500px;
+}
+
 hr {
     margin: 0;
     margin-bottom: 1em;
@@ -464,26 +469,26 @@ hr {
     font-size: 1em;
 }
 
-.searchcontenedor {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 50px;
+.search{
+    margin: 0 auto 10px;
 }
 
-.search input {
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    padding: 5px;
+.button-search{
+    position:relative;
+    top:28px;
+    left: 7px;
 }
 
-.button-search {
-    background-color: #9D8189;
-    color: white;
-    border: none;
+.search input{
+    width: 100%;
     border-radius: 10px;
-    height: 33px;
-    width: 33px;
+border: 1px solid #ccc;
+    padding: 5px 23px 5px 30px;
+  
+}
+
+.search input::placeholder{
+    font-weight: 400;
 }
 
 .resultado {
@@ -559,12 +564,12 @@ hr {
     align-items: center;
     margin: 20px auto;
     box-sizing: border-box;
-    box-shadow: 0 0 10px #9D8189 ;
+    box-shadow: 0 0 10px #b3acae;
     padding: 10px;
-         border-radius: 20px;
+    border-radius: 20px;
 }
 
-.divform{
+.divform {
     width: 90%;
 }
 
@@ -586,7 +591,6 @@ h4 {
     width: 100%;
     border: 0.5px solid #b3acae;
     border-radius: 5px;
-
 }
 
 ::placeholder {
@@ -742,7 +746,7 @@ footer {
 /* FIN FOOTER */
 
 /* INICIO RESPONSIVE */
- 
+
 @media screen and (min-width: 576px) {
     /* HEADER Y NAV */
     .hambu {
@@ -841,39 +845,18 @@ footer {
         display: flex;
         flex-wrap: wrap;
         width: 150px;
-        border-bottom: 1px solid #9D8189;
         height: 350px;
         overflow: hidden;
     }
-    .cvacordeon {
-        display: none;
-    }
+    
+
     .cvmodal {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+       
         position: relative;
-        bottom: 10px;
+        bottom: 8px;
     }
-    .cvmodal a {
-        color: #674e56;
-        display: inline-block;
-        font-weight: 400;
-        width: 100%;
-        text-align: center;
-        background-color: #F5C1DD;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-    }
-    .cvmodal a:hover {
-        background-color: #9D8189;
-        color: white;
-    }
-
-    .cvmodal a:active{
-        background-color: #674e56;
-    }
-
+    
+    
     .cvimg {
         width: 100%;
         height: 191px;
@@ -898,6 +881,7 @@ footer {
     }
     .servicios {
         margin: 30px auto;
+       
     }
     .serv2 {
         margin-bottom: 70px;
@@ -952,7 +936,6 @@ footer {
         margin-top: 30px;
         width: 700px;
     }
-   
     p {
         font-size: 0.9em;
     }
@@ -966,21 +949,17 @@ footer {
     .titulo h2 {
         font-size: 1.4em;
     }
-
     /*INICIO CV */
-
     /* FIN CV */
-    .cv, .cv2{
-   display: inline-block;
+    .cv, .cv2 {
+        display: inline-block;
         width: 200px;
         height: 450px;
     }
-
-    .cvmodal{
-       top:85px;
+    .cvmodal {
+        top: 88px;
     }
-
-    .vete{
+    .vete {
         position: relative;
         top: 85px;
     }
@@ -1009,15 +988,13 @@ footer {
     .formulario {
         width: 70%;
         margin: 50px auto;
-         box-shadow: 0 0 10px #9D8189 ;
-         border-radius: 20px;
-    padding: 50px; 
+        box-shadow: 0 0 10px #b3acae;
+        border-radius: 20px;
+        padding: 50px;
     }
-
     .formulario h4 {
         margin-bottom: 50px;
     }
-    
     .mapa {
         margin-top: 50px;
     }
@@ -1027,7 +1004,6 @@ footer {
     .redes {
         margin-top: 55px;
     }
-   
     .formulario input[type="submit"], .formulario input[type="reset"] {
         width: 7em;
         padding: 10px;
@@ -1097,16 +1073,10 @@ footer {
     .vete p {
         font-size: 1em;
     }
-  
-    .cv, .cv2{
+    .cv, .cv2 {
         height: 474px;
     }
-
-    .cvmodal{
-        top:85px;
-     }
-
-  
+   
     /* FIN EQUIPO */
     /* INICIO SERVICIOS */
     .posicionar2 {
@@ -1127,14 +1097,14 @@ footer {
         margin: 0 auto;
     }
     .serv2 a {
-        margin-top: 138px;
+        margin-top: 160px;
         line-height: 2em;
     }
     /* FIN SERVICIOS */
     /* INICIO CONTACTO */
-  .formulario{
-      width: 50%;
-  }
+    .formulario {
+        width: 50%;
+    }
     /* FIN CONTACTO */
     /* INICIO FOOTER */
     footer {
@@ -1194,6 +1164,9 @@ footer {
     }
     /* FIN EQUIPO */
     /* INICIO CV */
+
+    
+
     /* FIN CV */
     /* INICIO SERVICIOS */
     .servicios {
@@ -1224,7 +1197,6 @@ footer {
     .formulario h4 {
         margin-bottom: 50px;
     }
-    
     .formulario input[type="submit"], .formulario input[type="reset"] {
         width: 7em;
         padding: 10px;
@@ -1292,7 +1264,6 @@ footer {
     .imgbienvenida {
         margin-bottom: 50px;
     }
-    
     p {
         font-size: 1.05em;
         line-height: 2.1;
@@ -1320,11 +1291,9 @@ footer {
     }
     /* FIN EQUIPO */
     /* INICIO CV */
-    
-    .cvmodal{
-        top:94px;
-     }
-
+    .cvmodal {
+        top: 96px;
+    }
     /* FIN CV */
     /* INICIO SERVICIOS */
     .posicionar {
@@ -1361,11 +1330,9 @@ footer {
     .formulario h4 {
         margin-bottom: 50px;
     }
-   
     .redes {
         margin-top: 55px;
     }
-   
     .formulario input[type="submit"], .formulario input[type="reset"] {
         width: 7em;
         padding: 10px;

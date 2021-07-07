@@ -1,6 +1,6 @@
 <main>
 <div class="novedadestitulo" id="novedades">
-        <h2>Novedad id: {{id}}</h2>
+        <h2>Novedad id: {{novedad.id}}</h2>
     </div>
 
 
@@ -27,7 +27,7 @@
                 <p>{{{novedad.cuerpo}}}
                     
                 </p>
-                <p><img src="../../../images/uploads/{{{novedad.filename}}}"  width="100%" max-width="768px"/></p>
+                <p class="imagen-novedad"><img src="../../../images/uploads/{{{novedad.filename}}}"  /></p>
             </div>
         </div>
         <hr class="etiquetahr">
@@ -39,7 +39,8 @@
         </div>
     </div>
    
-
-
+<div class="regresar-centro">
+ <a class="regresar" href="/admin/novedades">Volver</a>
+</div>
 
 </main>

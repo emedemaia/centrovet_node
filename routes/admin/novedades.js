@@ -93,7 +93,8 @@ router.post('/agregarimg', upload.single('images'), (req, res, next) => {
             res.render('admin/agregar', {
                 layout: 'admin/layout',
                 filename: req.file.filename,
-                imagencargada:true
+                imagencargada:true,
+                imagenPreview:true
                 });
             });
 
@@ -128,6 +129,7 @@ router.get('/preview/:id', async(req, res, next)=>{
         layout: 'admin/layout',
         mx,
         novedad
+       
         
        
     })
