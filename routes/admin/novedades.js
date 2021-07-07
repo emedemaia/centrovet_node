@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var novedadesModel = require('../../models/novedadesmodel')
 var multer = require('multer');
-const fs = require('fs');
+// const fs = require('fs');
 
 var storage = multer.diskStorage({ destination: './public/images/uploads/',
 filename: function (req, file, cb){
@@ -173,5 +173,5 @@ console.log(obj);
 //     console.log(file);
 //   });
 
-// module.exports = router;
+module.exports = router;
 
