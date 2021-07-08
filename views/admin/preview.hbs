@@ -1,11 +1,11 @@
 <main>
-<div class="novedadestitulo" id="novedades">
-        <h2>Novedad id: {{novedad.id}}</h2>
+    <div class="novedadestitulo" id="novedades">
+        <h2>Novedad id: {{novedad.id}} {{id}}</h2>
     </div>
 
 
 
-   
+
     <div class="container-fluid novedades" value={{id}}>
         <div class="row">
             <div class="col">
@@ -25,22 +25,25 @@
         <div class="row">
             <div class="col contenido">
                 <p>{{{novedad.cuerpo}}}
-                    
+
                 </p>
-                <p class="imagen-novedad"><img src="../../../images/uploads/{{{novedad.filename}}}"  /></p>
+                <p class="imagen-novedad"><img src="../../../images/uploads/{{{novedad.filename}}}" /></p>
             </div>
         </div>
         <hr class="etiquetahr">
-          <div class="row">
+        <div class="row">
             <div class="col etiquetas">
                 <p>{{novedad.etiquetas}}
                 </p>
             </div>
         </div>
     </div>
-   
-<div class="regresar-centro">
- <a class="regresar" href="/admin/novedades">Volver</a>
-</div>
+
+    <div class="regresar-centro">
+        <a class="regresar" href="/admin/novedades">Volver</a>
+        <a class="borrar" href="/admin/novedades/eliminar/{{novedad.id}}"
+            onclick="return confirm('¿Estás seguro que quieres eliminar esta novedad?')">Borrar</a>
+    </div>
+
 
 </main>
