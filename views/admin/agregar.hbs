@@ -2,73 +2,80 @@
 
     <div class="pasosContenedor formnov">
         <h4 class="icon-number pasos"> Paso 1 - Agregar imagen </h4>
-        <p class="pasosContenedor">Si tu artículo contiene una imagen, cargala acá primero (seleccionala y apretá el botón cargar). <br>Caso contrario omití este paso y continuá con el Paso 2 (escribir artículo).</p>
-        <form action="/admin/novedades/agregarimg" method="post"  enctype="multipart/form-data">
+        <p class="pasosContenedor">Si tu artículo contiene una imagen, cargala acá primero (seleccionala y apretá el
+            botón cargar). <br>Caso contrario omití este paso y continuá con el Paso 2 (escribir artículo).</p>
+        <form action="/admin/novedades/agregarimg" method="post" enctype="multipart/form-data">
 
-            <p>
-                {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
-                <input type="file" name="images" accept="image/jpeg, image/png" class="tituloartic">
-            </p>
+   <div class="tituloartic">
+            {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
+            <input type="file" name="images" accept="image/jpeg, image/png" id="uploadImage" onchange="previewImage();" class="file-img">
+         
+                <img class="img-preview" height="150" id="uploadPreview"  src="../../images/aguja-perro.jpg" width="150" />
+            </div>
 
             {{!-- <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button> --}}
-            <button type="submit" class="btn submit-login pasosContenedor">Cargar</button>
+            <button type="submit" class="btn submit-login pasosContenedor tituloartic">Cargar</button>
 
         </form>
         {{#if imagencargada}}
-        <p class="img-cargada">Tu imagen ha sido cargada. Continúa con el paso 2.</p>
+        <script>
+
+            window.alert("Tu imagen ha sido cargada. Continúa con el paso 2.");
+        </script>
         {{/if}}
 
     </div>
 
     <div class="pasosContenedor formnov tituloartic">
         <h4 class="icon-number1 pasos"> Paso 2 - Escribir artículo </h4>
-        <p class="pasosContenedor">Agregá el título, autor y texto. Recordá seguir las recomendaciones para darle formato al texto que se encuentran al final de la página.</p>
-    <form action="/admin/novedades/agregar" method="post">
+        <p class="pasosContenedor">Agregá el título, autor y texto. Recordá seguir las recomendaciones para darle
+            formato al texto que se encuentran al final de la página.</p>
+        <form action="/admin/novedades/agregar" method="post">
 
-        <p>
-            <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic"></textarea>
-        </p>
+            <p>
+                <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic"></textarea>
+            </p>
 
-        <p>
-            <select name="autor" id="autor">
-                <option value="Ma. Soledad Varela">Ma. Soledad Varela</option>
-                <option value="Maia Inés Elías">Maia Inés Elías</option>
-            </select>
-        </p>
+            <p>
+                <select name="autor" id="autor">
+                    <option value="Ma. Soledad Varela">Ma. Soledad Varela</option>
+                    <option value="Maia Inés Elías">Maia Inés Elías</option>
+                </select>
+            </p>
 
 
 
-        <p>
-            <textarea name="cuerpo" id="cuerpo" rows="10" placeholder="Ingrese el texto de la novedad"></textarea>
-        </p>
-        <p>Previsualización imagen:</p>
-        <p class="imagen-novedad">
-            {{!-- de acá toma el valor para subirlo a la BD --}}
-            <input type="hidden" name="imagenes" value='<img src="images/uploads/{{filename}}"'>
-            <input type="hidden" value="{{filename}}" name="filename">
+            <p>
+                <textarea name="cuerpo" id="cuerpo" rows="10" placeholder="Ingrese el texto de la novedad"></textarea>
+            </p>
+            <p>Previsualización imagen:</p>
+            <p class="imagen-novedad">
+                {{!-- de acá toma el valor para subirlo a la BD --}}
+                <input type="hidden" name="imagenes" value='<img src="images/uploads/{{filename}}"'>
+                <input type="hidden" value="{{filename}}" name="filename">
 
-            {{#if imagenPreview}}
-            <img src="../../../images/uploads/{{filename}}"  alt="Previsualización de imagen">
+                {{#if imagenPreview}}
+                <img src="../../../images/uploads/{{filename}}" alt="Previsualización de imagen">
+                {{/if}}
+            </p>
+
+
+            <p>
+                <label for="etiquetas">Hashtags:</label><br />
+                <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"></textarea>
+            </p>
+            {{#if error}}
+            <p>
+                {{message}}
+            </p>
             {{/if}}
-        </p>
+
+            <button class="submit-login" type="submit">Grabar</button>
+            <a class="regresar" href="/admin/novedades">Volver</a>
+        </form>
+    </div>
 
 
-        <p>
-            <label for="etiquetas">Hashtags:</label><br />
-            <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"></textarea>
-        </p>
-        {{#if error}}
-        <p>
-            {{message}}
-        </p>
-        {{/if}}
-
-        <button class="submit-login" type="submit">Grabar</button>
-        <a class="regresar" href="/admin/novedades">Volver</a>
-    </form>
-</div>
-
-    
     <div class="notacion">
         <p><b><u>Para dar formato al texto:</u></b></p>
         <p>A los párrafos, escribilos entre &lt;p&gt;<span style="color:red;">tu texto va aquí</span>&lt;/p&gt;</p>

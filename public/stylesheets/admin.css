@@ -76,12 +76,11 @@ footer {
 
 .formulariologin {
   margin: 50px auto;
-  width: 60%;
+  width: 70%;
   text-align: center;
   box-shadow: 0 0 10px #b3acae;
   padding: 30px;
   border-radius: 20px;
- 
 }
 
 .formulariologin input {
@@ -192,28 +191,27 @@ input::placeholder {
   color: white;
 }
 
-
-.search{
+.search {
   margin: 0 auto 20px;
 }
 
-.button-search{
-  position:relative;
-  top:28px;
+.button-search {
+  position: relative;
+  top: 28px;
   left: 7px;
 }
 
-.search input{
+.search input {
   width: 100%;
   border-radius: 10px;
-border: 1px solid #ccc;
+  border: 1px solid #ccc;
   padding: 5px 23px 5px 30px;
-
 }
 
-.search input::placeholder{
+.search input::placeholder {
   font-weight: 400;
 }
+
 .resultado {
   width: 95%;
   margin: 5px auto;
@@ -314,13 +312,71 @@ border: 1px solid #ccc;
   width: 80%;
 }
 
-.img-cargada{
+.file-img{
+  color:lightseagreen;
+  font-weight: 600;
+}
+
+.img-preview{
+  display: block;
+    max-width: 100%;
+    height:auto
+}
+
+input[type=file]::-webkit-file-upload-button {
+  font-weight: 400;
+  border-radius: 10px;
+  border: none;
+  padding: 7px;
+  box-sizing: border-box;
+  color: white;
+  background-color: #572937;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+input[type=file]::-webkit-file-upload-button:hover {
+  background-color: #9D8189;
+}
+
+input[type=file]::-webkit-file-upload-button:active {
+  background-color: #83045e;
+}
+
+input[type=file]::file-selector-button {
+  font-weight: 400;
+  border-radius: 10px;
+  border: none;
+  padding: 7px;
+  box-sizing: border-box;
+  color: white;
+  background-color: #572937;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #9D8189;
+}
+
+input[type=file]::file-selector-button:active {
+  background-color: #83045e;
+}
+
+
+/* .img-cargada{
   margin: 10px;
   color:darkmagenta;
   background-color:lightpink; 
   text-align: center; 
   border-radius:10px
-}
+} */
 
 .pasos {
   color: #674e56;
@@ -351,6 +407,7 @@ border: 1px solid #ccc;
 .tituloartic {
   margin-top: 30px;
 }
+
 
 /* fin agregar novedades */
 
@@ -432,12 +489,11 @@ border: 1px solid #ccc;
 
 .novedades {
   margin-bottom: 50px;
- padding: 10px;
+  padding: 10px;
   width: 90%;
   border-radius: 20px;
   background-color: whitesmoke;
   box-shadow: 0 0 20px #b3acae;
- 
 }
 
 .novedades h3 {
@@ -483,17 +539,15 @@ border: 1px solid #ccc;
   margin: 10px;
 }
 
-.imagen-novedad{
+.imagen-novedad {
   display: flex;
   justify-content: center;
-  }
-  
-  .imagen-novedad img{
-      width: 100%;
-      max-width: 500px;
-  }
-  
+}
 
+.imagen-novedad img {
+  width: 100%;
+  max-width: 500px;
+}
 
 hr {
   margin: 0;
@@ -511,18 +565,19 @@ hr {
   font-size: 1em;
 }
 
-.regresar-centro{
+.regresar-centro {
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
+
 /* previsualizar novedades*/
 
 /* FIN NOVEDADES */
 
 @media screen and (min-width: 576px) {
   .formulariologin {
-    width: 50%;
+    width: 60%;
   }
 }
 
@@ -540,8 +595,7 @@ hr {
   .formulariologin {
     width: 40%;
   }
-
-  .formulariologin input{
+  .formulariologin input {
     width: 100%;
   }
 }
@@ -562,7 +616,6 @@ hr {
   .formulariologin {
     width: 30%;
   }
- 
 }
 
 @media screen and (min-width: 1140px) {
@@ -575,7 +628,6 @@ hr {
   .search {
     left: 90%;
   }
-
   .formulariologin {
     width: 20%;
   }
