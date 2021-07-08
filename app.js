@@ -50,6 +50,10 @@ secured = async(req,res,next) =>{
 }//cierro secured
 
 
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
+
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/quienessomos', quienessomosRouter);
