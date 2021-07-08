@@ -31,7 +31,7 @@ function previewImage() {
     reader.onload = function (e) {             
         document.getElementById('uploadPreview').src = e.target.result;         
     };     
-}
+};
 
 
 

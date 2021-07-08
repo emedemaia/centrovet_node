@@ -80,8 +80,8 @@ router.post('/agregar', async (req, res, next) => {
         console.log(error);
         res.render('admin/agregar', {
             layout: 'admin/layout',
-            error: true,
-            message: 'No se cargó la novedad'
+            error: true
+            
         })
     }
 });

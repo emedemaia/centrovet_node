@@ -17,12 +17,15 @@
             <button type="submit" class="btn submit-login pasosContenedor tituloartic">Cargar</button>
 
         </form>
-        {{#if imagencargada}}
-        <script>
 
-            window.alert("Tu imagen ha sido cargada. Continúa con el paso 2.");
-        </script>
-        {{/if}}
+           {{#if imagencargada}}
+       <div class="img-cargada" id="img-cargada">
+           <p>Tu imagen ha sido cargada. Continúa con el paso 2.</p>
+           <button id="cerrar-img" class="cerrar-img"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+           </div>
+            {{/if}}
+        
+        
 
     </div>
 
@@ -65,9 +68,7 @@
                 <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"></textarea>
             </p>
             {{#if error}}
-            <p>
-                {{message}}
-            </p>
+           <script> window.alert("No se cargó la novedad. Volvé a intentar")</script>
             {{/if}}
 
             <button class="submit-login" type="submit">Grabar</button>

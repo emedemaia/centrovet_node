@@ -370,13 +370,27 @@ input[type=file]::file-selector-button:active {
 }
 
 
-/* .img-cargada{
+.img-cargada{
   margin: 10px;
-  color:darkmagenta;
-  background-color:lightpink; 
-  text-align: center; 
-  border-radius:10px
-} */
+  color:#572937;
+  background-color:rgb(255, 196, 0);
+  box-sizing: border-box; 
+  padding: 5px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+  border-radius:20px;
+}
+
+.img-cargada p{
+  margin-bottom: 0;
+}
+
+.cerrar-img{
+  background-color: transparent;
+  border: none;
+  color: #572937;
+}
 
 .pasos {
   color: #674e56;
