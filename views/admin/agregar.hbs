@@ -6,7 +6,7 @@
         <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
 
             <p>
-                <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic"></textarea>
+                <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic" required></textarea>
             </p>
 
             <p>
@@ -24,12 +24,12 @@
 
              <div class="tituloartic">
             {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
-            <input type="file" name="images" accept="image/jpeg, image/png" id="uploadImage" onchange="previewImage();" class="file-img">
+            <input type="file" name="images" accept="image/jpeg, image/png" id="uploadImage" onchange="previewImage();"  class="file-img">
          
                 <img class="img-preview"  id="uploadPreview"  src="../../../images/aguja-perro.jpg" width="150" />
 
 
-             <input type="hidden" name="imagenes" id="imgPreview" value="">
+             <input type="hidden" name="imagenes" id="imgPreview">
              
             
             </div>
@@ -37,8 +37,10 @@
 
             <p>
                 <label for="etiquetas">Hashtags:</label><br />
-                <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags"></textarea>
+                <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags" required></textarea>
             </p>
+
+
             {{#if error}}
            <script> window.alert("No se cargó la novedad. Volvé a intentar")</script>
             {{/if}}
