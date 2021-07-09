@@ -46,6 +46,7 @@ async function getNovedadById(id) {
     return rows[0];
 };
 
+
 // para hacer el update de la novedad
 
 async function modificarNovedadById(obj, id) {

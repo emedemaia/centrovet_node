@@ -62,11 +62,12 @@ router.post('/agregar', upload.single('images'), async (req, res, next) => {
         var autor = req.body.autor;
         var cuerpo = req.body.cuerpo;
         var etiquetas = req.body.etiquetas;
+        var imagenes = req.body.imagenes;
 
 
-        console.log(req.file.path, req.file.filename)
+        // console.log(imagenes)
 
-        if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "") {
+        if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "" && imagenes != "") {
 
 
             var obj = {
@@ -74,9 +75,12 @@ router.post('/agregar', upload.single('images'), async (req, res, next) => {
                 autor: req.body.autor,
                 cuerpo: req.body.cuerpo,
                 etiquetas: req.body.etiquetas,
-                imagenes: req.file.path,
+                imagenes: '<img src="images/uploads/'+ req.file.filename + '"/>',
                 filename: req.file.filename
             }
+
+            console.log(req.file.path, req.file.filename)
+
             await novedadesModel.insertNovedad(obj);
             console.log(obj, 'cargado a BD');
 
@@ -84,25 +88,46 @@ router.post('/agregar', upload.single('images'), async (req, res, next) => {
             console.log('redirect to admin')
 
 
-        } else {
+        } 
+        
+        else {
+
+            if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "" && imagenes == "") {
+
+
+                var obj = {
+                    titulo: req.body.titulo,
+                    autor: req.body.autor,
+                    cuerpo: req.body.cuerpo,
+                    etiquetas: req.body.etiquetas,
+                    imagenes: '',
+                    filename: ''
+
+                }
+                await novedadesModel.insertNovedad(obj);
+                console.log(obj, 'cargado a BD');
+
+                res.redirect('/admin/novedades');
+                console.log('redirect to admin')
+            } else {
+                res.render('admin/agregar', {
+                    layout: 'admin/layout',
+                    error: true,
+                    message: 'Todos los campos (excepto imágenes) son requeridos'
+                });
+            }
+        }
+        } catch (error) {
+            console.log(error);
             res.render('admin/agregar', {
                 layout: 'admin/layout',
-                error: true,
-                message: 'Todos los campos (excepto imágenes) son requeridos'
-            });
+                error: true
+
+            })
+
         }
 
-    } catch (error) {
-        console.log(error);
-        res.render('admin/agregar', {
-            layout: 'admin/layout',
-            error: true
-
-        })
-
-    }
-
-});
+    });
 
 
 
@@ -137,7 +162,7 @@ router.post('/modificar', upload.single('images'), async (req, res, next) => {
             autor: req.body.autor,
             cuerpo: req.body.cuerpo,
             etiquetas: req.body.etiquetas,
-            imagenes: req.file.path,
+            imagenes: '<img src="images/uploads/'+ req.file.filename + '"/>',
             filename: req.file.filename
         }
 
@@ -159,23 +184,34 @@ router.post('/modificar', upload.single('images'), async (req, res, next) => {
 
 
 
-// para previsualizar la novedad
+// para previsualizar la novedad con imagen
 router.get('/preview/:id', async (req, res, next) => {
     var id = req.params.id;
     var novedad = await novedadesModel.getNovedadById(id);
     var mx = await novedadesModel.getNovedadesMX();
 
+    console.log(novedad)
 
+if(novedad.imagenes != ""){
     res.render('admin/preview', {
         layout: 'admin/layout',
         mx,
-        novedad
-
-
-
+        novedad,
+        imagenes:true
+        
     })
-
+}else{
+    res.render('admin/preview', {
+        layout: 'admin/layout',
+        mx,
+        novedad,
+        imagenes:false
+        
+    })
+}
 });
+
+
 
 //para listar las fotos de la carpeta upload
 
