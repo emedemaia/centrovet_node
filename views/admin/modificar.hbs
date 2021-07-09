@@ -1,7 +1,9 @@
 <main>
 
-    <form action="/admin/novedades/modificar" method="post" class="formnov">
-        <p>Id de novedad:{{novedad.id}}</p>
+    <h3>Id de novedad:{{novedad.id}}</h3>
+
+    <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data" class="formnov">
+
         <input type="hidden" value="{{novedad.id}}" name="id">
         <p>
             <textarea id="titulo" placeholder="Título" name="titulo" rows="1">{{novedad.titulo}}</textarea>
@@ -16,17 +18,39 @@
         </p>
 
         <p>
-            <textarea name="cuerpo" id="cuerpo" cols="30" rows="10" placeholder="Ingrese el texto de la novedad"
-                value={{novedad.cuerpo}}>{{novedad.cuerpo}}</textarea>
+            <textarea name="cuerpo" id="my-expressjs-tinymce-app" value={{novedad.cuerpo}}>
+                {{novedad.cuerpo}}
+               
+            </textarea>
         </p>
-        <p><label for="imagenes">Imagenes:</label><br/>
-            <textarea name="imagenes" id="imagenes" rows="1"
-                >{{novedad.imagenes}}</textarea>
-        </p>
-        <p>
-            <label for="etiquetas">Hashtags:</label><br/>
-            <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="hashtags"
-                value={{novedad.etiquetas}}>{{novedad.etiquetas}}</textarea>
+
+        <div class="img-modif-display">
+            <div>
+                <div>Imagen Actual: </div>
+                <div>
+                    <img class="img-modif" src="../../../images/uploads/{{novedad.filename}}"
+                        alt="Previsualización de imagen" id"img-preview-modif">
+                </div>
+            </div>
+            <div class="nueva-imagen">
+
+                <div>Nueva Imagen: </div>
+                <div>
+
+                    <input type="file" name="images" accept="image/jpeg, image/png" id="uploadImage"
+                        onchange="previewImage();" class="file-img">
+
+                    <img class="img-preview" width="150" id="uploadPreview" src="../../../images/aguja-perro.jpg" />
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <label for="etiquetas">Hashtags:</label><br />
+        <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="hashtags"
+            value={{novedad.etiquetas}}>{{novedad.etiquetas}}</textarea>
         </p>
 
         {{#if error}}
@@ -38,12 +62,6 @@
         <a class="regresar" href="/admin/novedades">Volver</a>
     </form>
 
-    <div class="notacion">
-        <p><b><u>Para dar formato al texto:</u></b></p>
-        <p>Para ingresar un párrafo, escribí entre &lt;p&gt;&lt;/p&gt;</p>
-        <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u>
-            &lt;u&gt;&lt;/u&gt;</p>
-        <p>Para insertar una imagen, escribí &lt;img src="<i>acá ingresá el link a la foto"</i>&gt;</p>
-    </div>
+
 
 </main>

@@ -297,15 +297,6 @@ input::placeholder {
 }
 
 
-
-.notacion {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin: 30px auto;
-  width: 80%;
-  padding: 5px;
-}
-
 .cargarImagen {
   margin: 10px auto;
   width: 80%;
@@ -317,7 +308,6 @@ input::placeholder {
 }
 
 .img-preview{
-  display: block;
     max-width: 100%;
     height:auto
 }
@@ -366,46 +356,6 @@ input[type=file]::file-selector-button:hover {
 
 input[type=file]::file-selector-button:active {
   background-color: #83045e;
-}
-
-
-.img-cargada{
-  margin: 10px;
-  color:#572937;
-  background-color:rgb(255, 196, 0);
-  box-sizing: border-box; 
-  padding: 5px 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-  border-radius:20px;
-}
-
-.img-cargada p{
-  margin-bottom: 0;
-}
-
-.cerrar-img{
-  background-color: transparent;
-  border: none;
-  color: #572937;
-}
-
-.pasos {
-  color: #674e56;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5c1dd+1,f4cbe1+19,f4cbe1+19,f4deea+39,f9f9f9+78 */
-  background: #f5c1dd;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #f5c1dd 1%, #f4cbe1 19%, #f4cbe1 19%, #f4deea 39%, #ffffff 78%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #f5c1dd 1%, #f4cbe1 19%, #f4cbe1 19%, #f4deea 39%, #ffffff 78%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #f5c1dd 1%, #f4cbe1 19%, #f4cbe1 19%, #f4deea 39%, #ffffff 78%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5c1dd', endColorstr='#f9f9f9', GradientType=1);
-  /* IE6-9 */
-  border-radius: 20px;
-  padding: 5px;
 }
 
 .pasosContenedor {
@@ -555,13 +505,22 @@ align-items: center;
 .imagen-novedad {
   display: flex;
   justify-content: center;
+
 }
 
-.imagen-novedad img {
+.img-modif {
   width: 100%;
   max-width: 500px;
 }
 
+.img-modif-display{
+  display: flex;
+  margin: 20px 0;
+}
+
+.nueva-imagen{
+  margin-left: 30px;
+}
 hr {
   margin: 0;
   margin-bottom: 1em;

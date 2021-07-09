@@ -1,39 +1,9 @@
 <main>
 
-    <div class="pasosContenedor formnov">
-        <h4 class="icon-number pasos"> Paso 1 - Agregar imagen </h4>
-        <p class="pasosContenedor">Si tu artículo contiene una imagen, cargala acá primero (seleccionala y apretá el
-            botón cargar). <br>Caso contrario omití este paso y continuá con el Paso 2 (escribir artículo).</p>
-        <form action="/admin/novedades/agregarimg" method="post" enctype="multipart/form-data">
-
-   <div class="tituloartic">
-            {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
-            <input type="file" name="images" accept="image/jpeg, image/png" id="uploadImage" onchange="previewImage();" class="file-img">
-         
-                <img class="img-preview" height="150" id="uploadPreview"  src="../../images/aguja-perro.jpg" width="150" />
-            </div>
-
-            {{!-- <button type="button" class="btn regresar" data-bs-dismiss="modal">Cerrar</button> --}}
-            <button type="submit" class="btn submit-login pasosContenedor tituloartic">Cargar</button>
-
-        </form>
-
-           {{#if imagencargada}}
-       <div class="img-cargada" id="img-cargada">
-           <p>Tu imagen ha sido cargada. Continúa con el paso 2.</p>
-           <button id="cerrar-img" class="cerrar-img"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-           </div>
-            {{/if}}
-        
-        
-
-    </div>
 
     <div class="pasosContenedor formnov tituloartic">
-        <h4 class="icon-number1 pasos"> Paso 2 - Escribir artículo </h4>
-        <p class="pasosContenedor">Agregá el título, autor y texto. Recordá seguir las recomendaciones para darle
-            formato al texto que se encuentran al final de la página.</p>
-        <form action="/admin/novedades/agregar" method="post">
+     
+        <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
 
             <p>
                 <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic"></textarea>
@@ -49,18 +19,18 @@
 
 
             <p>
-                <textarea name="cuerpo" id="my-expressjs-tinymce-app" rows="10" placeholder="Ingrese el texto de la novedad"></textarea>
+                <textarea name="cuerpo" id="my-expressjs-tinymce-app"  placeholder="Ingrese el texto de la novedad"></textarea>
             </p>
-            <p>Previsualización imagen:</p>
-            <p class="imagen-novedad">
-                {{!-- de acá toma el valor para subirlo a la BD --}}
-                <input type="hidden" name="imagenes" value='<img src="images/uploads/{{filename}}"'>
-                <input type="hidden" value="{{filename}}" name="filename">
 
-                {{#if imagenPreview}}
-                <img src="../../../images/uploads/{{filename}}" alt="Previsualización de imagen">
-                {{/if}}
-            </p>
+             <div class="tituloartic">
+            {{!-- esto está relacionado con el upload de multer,x eso el name coincide --}}
+            <input type="file" name="images" accept="image/jpeg, image/png" id="uploadImage" onchange="previewImage();" class="file-img">
+         
+                <img class="img-preview"  id="uploadPreview"  src="../../../images/aguja-perro.jpg" width="150" />
+
+             
+            
+            </div>
 
 
             <p>
@@ -77,12 +47,7 @@
     </div>
 
 
-    <div class="notacion">
-        <p><b><u>Para dar formato al texto:</u></b></p>
-        <p>A los párrafos, escribilos entre &lt;p&gt;<span style="color:red;">tu texto va aquí</span>&lt;/p&gt;</p>
-        <p><b>Negrita:</b>&lt;b&gt;&lt;/b&gt; - <i>Itálica:</i> &lt;i&gt;&lt;/i&gt; - <u>Subrayado:</u>
-            &lt;u&gt;&lt;/u&gt;</p>
-    </div>
+    
 
 
 </main>
