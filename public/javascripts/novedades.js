@@ -45,6 +45,11 @@ function previewImage() {
 
 };
 
+// LOADER
+function cargar(){
+    document.getElementById("loader").style.display = "block";
+}
+
 
 
 

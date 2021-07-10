@@ -1,6 +1,7 @@
 <main>
 
 
+
     <div class="pasosContenedor formnov tituloartic">
      
         <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
@@ -45,13 +46,13 @@
            <script> window.alert("No se cargó la novedad. Volvé a intentar")</script>
             {{/if}}
 
-            <button class="submit-login" type="submit">Grabar</button>
+            <button class="submit-login" type="submit" onclick="cargar();">Grabar</button>
             <a class="regresar" href="/admin/novedades">Volver</a>
         </form>
     </div>
 
 
-    
+    <div id="loader"></div>
 
 
 </main>
