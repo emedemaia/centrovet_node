@@ -53,7 +53,7 @@ router.get('/asc', async function (req, res, next) {
 
 
 //novedades ordenadas por fechahora ascendente y desdendente
-router.get('/FHasc', async function (req, res, next) {
+router.get('/fhasc', async function (req, res, next) {
     var novedades = await novedadesModel.getNovedadesFechaHoraAsc();
 
     res.render('admin/novedades', {
@@ -65,7 +65,7 @@ router.get('/FHasc', async function (req, res, next) {
 
 });
 
-router.get('/FHdesc', async function (req, res, next) {
+router.get('/fhdesc', async function (req, res, next) {
     var novedades = await novedadesModel.getNovedadesFechaHoraDesc();
 
     res.render('admin/novedades', {
