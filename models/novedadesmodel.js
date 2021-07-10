@@ -62,7 +62,7 @@ async function modificarNovedadById(obj, id) {
 
 
 
-//para imprimir las novedades con la hora adecuada
+//para imprimir las novedades con la hora adecuada ordenadas por id
 async function getNovedadesMX() {
     var query = "SET lc_time_names = 'es_MX'";
     var rows = await pool.query(query);
@@ -72,14 +72,36 @@ async function getNovedadesMX() {
 
 async function getNovedadesFechaHora() {
 
-
     var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, filename, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades order by id desc";
-
 
     var rows = await pool.query(query);
     return rows;
 }
 
+async function getNovedadesFechaHoraIdAsc() {
+
+    var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, filename, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades order by id asc";
+
+    var rows = await pool.query(query);
+    return rows;
+}
+
+//para imprimir las novedades con la hora adecuada ordenadas por fechahora
+async function getNovedadesFechaHoraDesc() {
+
+    var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, filename, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades order by fechahora desc";
+
+    var rows = await pool.query(query);
+    return rows;
+}
+
+async function getNovedadesFechaHoraAsc() {
+
+    var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, filename, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades order by fechahora asc";
+
+    var rows = await pool.query(query);
+    return rows;
+}
 
 //buscador
 async function buscarNovedades(busqueda) {
@@ -88,4 +110,4 @@ async function buscarNovedades(busqueda) {
     return rows;
 }
 
-module.exports = { getNovedades, getNovedadesAsc, insertNovedad, deleteNovedadById, getNovedadById, modificarNovedadById, getNovedadesFechaHora, getNovedadesMX, buscarNovedades }
+module.exports = { getNovedades, getNovedadesAsc, insertNovedad, deleteNovedadById, getNovedadById, modificarNovedadById, getNovedadesFechaHora, getNovedadesMX, buscarNovedades, getNovedadesFechaHoraAsc, getNovedadesFechaHoraDesc, getNovedadesFechaHoraIdAsc }

@@ -1,21 +1,16 @@
 <main>
+
     <div class="inicio">
-
         <div class="saludo">
-
             <script>
                 horario(hora);
             </script>
             <span class="usuario-novedades">{{usuario}}!</span> ¿Qué novedades hay para hoy?
-
         </div>
-
         <div class="cerrar">
-
             <a href="/admin/login/logout" class="btn-danger cerrarses"><i class="fas fa-sign-out-alt"></i> Cerrar
                 Sesión</a>
         </div>
-
     </div>
 
     <div class="nuevo">
@@ -26,14 +21,6 @@
         </div>
     </div>
 
-    <div class="orden">
-
-        <p><a href="/admin/novedades/asc" class="boton">Ascendente</a></p>
-
-        <p><a href="/admin/novedades" class="boton">Descendente</a></p>
-
-
-    </div>
 
     <div class="container d-sm-none search">
         <div class="row justify-content-center">
@@ -69,8 +56,16 @@
     <table class="table table-striped">
         <thead class="thead">
             <tr>
-                <th scope="col" class="col-1">#</th>
-                <th scope="col" class="col-9">Título</th>
+                <th scope="col" class="col-1">#
+                    <a href="/admin/novedades/asc"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                    <a href="/admin/novedades"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                </th>
+                <th scope="col" class="col-5">Título</i></th>
+                <th scope="col" class="col-5">Fecha y Hora
+                    <a href="/admin/novedades/FHasc"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                    <a href="/admin/novedades/FHdesc"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+
+                </th>
                 <th scope="col" class="acciones">Acciones</th>
             </tr>
         </thead>
@@ -79,20 +74,21 @@
             <tr>
                 <th scope="row">{{id}}</th>
                 <td><a href="/admin/novedades/preview/{{id}}" target="_blank">{{titulo}}</a></td>
+                <th scope="row" class="fechahora">{{fechahora}} hs</th>
                 <td class="acciones">
 
                     <a href="/admin/novedades/modificar/{{id}}"><i class="fas fa-edit"></i></a>
                     <a href="/admin/novedades/eliminar/{{id}}"><i class="fas fa-trash-alt"
                             onclick="return confirm('¿Estás seguro que quieres eliminar esta novedad?')"></i></a>
-                           
+
                 </td>
             </tr>
             {{/each}}
 
         </tbody>
     </table>
-  
-    
+
+
     <div class="resultado">
         {{#if is_search}}
         {{#unless novedades.length}}

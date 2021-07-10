@@ -14,18 +14,21 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 
-//página principal de novedades y BUSCADOR
+//página principal de novedades y BUSCADOR. por defecto novedades descendente
 router.get('/', async function (req, res, next) {
 
     if (req.query.q === undefined) {
-        novedades = await novedadesModel.getNovedades();
+        mx = await novedadesModel.getNovedadesMX();
+        novedades = await novedadesModel.getNovedadesFechaHora();
     } else {
+        mx = await novedadesModel.getNovedadesMX();
         novedades = await novedadesModel.buscarNovedades(req.query.q);
     }
 
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
+        mx,
         novedades,
         is_search: req.query.q !== undefined,
         q: req.query.q
@@ -36,7 +39,7 @@ router.get('/', async function (req, res, next) {
 
 //novedades ascendente
 router.get('/asc', async function (req, res, next) {
-    var novedades = await novedadesModel.getNovedadesAsc();
+    var novedades = await novedadesModel.getNovedadesFechaHoraIdAsc();
 
     res.render('admin/novedades', {
         layout: 'admin/layout',
@@ -45,6 +48,32 @@ router.get('/asc', async function (req, res, next) {
     });
 
 });
+
+
+//novedades ordenadas por fechahora ascendente y desdendente
+router.get('/FHasc', async function (req, res, next) {
+    var novedades = await novedadesModel.getNovedadesFechaHoraAsc();
+
+    res.render('admin/novedades', {
+        layout: 'admin/layout',
+        usuario: req.session.nombre,
+        novedades
+    });
+
+});
+
+router.get('/FHdesc', async function (req, res, next) {
+    var novedades = await novedadesModel.getNovedadesFechaHoraDesc();
+
+    res.render('admin/novedades', {
+        layout: 'admin/layout',
+        usuario: req.session.nombre,
+        novedades
+    });
+
+});
+
+
 
 
 //página agregar novedades

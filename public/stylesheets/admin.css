@@ -272,6 +272,18 @@ input::placeholder {
   color: white;
 }
 
+.fechahora{
+  font-weight: 400;
+}
+
+.fa-arrow-up, .fa-arrow-down{
+  margin: 0 3px;
+  font-size: 0.8em;
+color: #F5C1DD;
+
+}
+
+
 .acciones .fas {
   font-size: 1.2em;
   width: 25px;
