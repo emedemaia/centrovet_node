@@ -30,6 +30,7 @@ router.get('/', async function (req, res, next) {
         usuario: req.session.nombre,
         mx,
         novedades,
+        orderDesc:true,
         is_search: req.query.q !== undefined,
         q: req.query.q
 
@@ -44,7 +45,8 @@ router.get('/asc', async function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        novedades
+        novedades,
+        orderAsc:true,
     });
 
 });
@@ -57,7 +59,8 @@ router.get('/FHasc', async function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        novedades
+        novedades,
+        orderAsc:true,
     });
 
 });
@@ -68,7 +71,8 @@ router.get('/FHdesc', async function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        novedades
+        novedades,
+        orderDesc:true,
     });
 
 });

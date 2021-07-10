@@ -396,10 +396,17 @@ overflow: hidden;
   font-weight: 400;
 }
 
+.orderby{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
 .fa-arrow-up, .fa-arrow-down {
   margin: 0 3px;
   font-size: 0.8em;
   color: #F5C1DD;
+  display: none;
 }
 
 .acciones .fas {
@@ -689,22 +696,19 @@ hr {
     width: 60%;
   }
   /*ICOMOON HEADING*/
-  .icon-moon-stars:before {
-    font-family: 'icomoon';
+  .icon-moon-stars:before, .icon-sun:before, .icon-sunset:before {
     font-size: 3em;
-    content: "\e90a";
-  }
-  .icon-sun:before {
-    font-family: 'icomoon';
-    font-size: 3em;
-    content: "\e90b";
-  }
-  .icon-sunset:before {
-    font-family: 'icomoon';
-    font-size: 3em;
-    content: "\e90c";
   }
   /*ICOMOON HEADING*/
+
+  .fa-arrow-up, .fa-arrow-down {
+    display: initial;
+  }
+  
+  .orderby{
+    display: none;
+  }
+
 }
 
 @media screen and (min-width: 720px) {
