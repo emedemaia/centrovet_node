@@ -193,19 +193,19 @@ input::placeholder {
   text-decoration: none;
 }
 
-/* .meteored{
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 40px;
+.nuevobtn{
+  position: relative;
+  top:9px;
 }
 
-.meteored-widget{
-width: 141px;
-color: rgb(134, 134, 134);
-background-color: rgb(255, 255, 255);
-overflow: hidden;
-} */
+
+.nuevo {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 60px auto 10px;
+}
+
 
 .boton {
   display: block;
@@ -235,7 +235,9 @@ overflow: hidden;
 }
 
 .search {
-  margin: 0 auto 20px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 20px;
 }
 
 .button-search {
@@ -257,7 +259,7 @@ overflow: hidden;
 
 .resultado {
   width: 95%;
-  margin: 5px auto;
+  margin: 5px auto 10PX;
 }
 
 /*ICOMOON HEADING*/
@@ -266,6 +268,8 @@ overflow: hidden;
   font-family: 'icomoon';
   font-size: 2em;
   content: "\e90a";
+  position: relative;
+  top: 13px;
   -webkit-animation: titilar 2s linear;
   -webkit-animation-iteration-count: 3;
   animation: titilar 2s linear;
@@ -301,6 +305,8 @@ overflow: hidden;
   font-family: 'icomoon';
   font-size: 2em;
   content: "\e90b";
+  position: relative;
+  top: 13px;
   -webkit-animation: rotarSol 4s linear;
   -webkit-animation-iteration-count: 2;
   animation: rotarSol 4s linear;
@@ -332,6 +338,8 @@ overflow: hidden;
 .icon-sunset:before {
   font-family: 'icomoon';
   font-size: 2em;
+  position: relative;
+  top: 13px;
   content: "\e90c";-webkit-animation: sunset 4s linear;
   -webkit-animation-iteration-count: 1;
   animation: sunset 4s linear;
@@ -369,16 +377,6 @@ overflow: hidden;
 
 /*tabla novedades*/
 
-.nuevo {
-  display: flex;
-  justify-content: space-between;
-  width: 95%;
-  margin: 60px auto 10px;
-}
-
-.nuevo h4 {
-  line-height: 30px;
-}
 
 .table {
   margin: 5px auto 20px;
@@ -392,22 +390,14 @@ overflow: hidden;
   color: white;
 }
 
+.thead a{
+  color: white;
+}
 .fechahora {
   font-weight: 400;
 }
 
-.orderby{
-  display: flex;
-  justify-content: space-evenly;
-  margin: 20px 0;
-}
 
-.fa-arrow-up, .fa-arrow-down {
-  margin: 0 3px;
-  font-size: 0.8em;
-  color: #F5C1DD;
-  display: none;
-}
 
 .acciones .fas {
   font-size: 1.2em;
@@ -701,33 +691,20 @@ hr {
   }
   /*ICOMOON HEADING*/
 
-  .fa-arrow-up, .fa-arrow-down {
-    display: initial;
-  }
-  
-  .orderby{
-    display: none;
-  }
-
 }
 
 @media screen and (min-width: 720px) {
-  .searchcontenedor {
-    position: relative;
-    margin: 0;
-    width: 100%;
-  }
-  .search {
-    position: absolute;
-    left: 66%;
-    bottom: 5px;
-  }
+
+
+ 
   .formulariologin {
     width: 40%;
   }
   .formulariologin input {
     width: 100%;
   }
+
+
 }
 
 @media screen and (min-width: 960px) {
@@ -737,6 +714,9 @@ hr {
   .formulariologin {
     width: 30%;
   }
+
+
+ 
 }
 
 @media screen and (min-width: 1024px) {

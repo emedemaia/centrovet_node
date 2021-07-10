@@ -1,10 +1,11 @@
 <main>
 
     <div class="inicio">
-      
-      
+
+
         <div class="saludo">
-            <script> horario(hora); </script><span class="usuario-novedades" >{{usuario}}!</span> ¿Qué artículos hay para hoy?
+            <script> horario(hora);</script><span class="usuario-novedades">{{usuario}}!</span> ¿Qué novedades hay para
+            hoy?
         </div>
 
         <div class="cerrar">
@@ -18,74 +19,58 @@
         <div>
             <h4>Novedades</h4>
         </div>
+        <div class="d-sm-none search">
+            <form action="novedades" method="get">
+
+                <label for="search" class="button-search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
+
+            </form>
+        </div>
+
+        <div class="d-none d-sm-block">
+            <form action="novedades" method="get" class="search">
+
+                <label for="search" class="button-search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
+
+            </form>
+        </div>
+
         <div> <a href="/admin/novedades/agregar" class="nuevobtn btn-success"><i class="fas fa-plus"></i> Nuevo</a>
         </div>
     </div>
 
-<div class="container d-sm-none search">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <form action="novedades" method="get">
-
-                    <label for="search" class="button-search">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </label>
-                    <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-    
-<div class="orderby">
-{{#if orderDesc}}
-<button><a href="/admin/novedades/asc"  id="orderById" >Ordenar por Id</a></button>
-{{/if}}
-
-{{#if orderAsc}}
-<button><a href="/admin/novedades"  id="orderById" >Ordenar por Id</a></button>
-{{/if}}              
 
 
-{{#if orderDesc}}
-<button><a href="/admin/novedades/asc"  id="orderById" >Ordenar por Fecha y Hora</a></button>
-{{/if}}
 
-{{#if orderAsc}}
-<button><a href="/admin/novedades"  id="orderById" >Ordenar por Fecha y Hora</a></button>
-{{/if}} 
-</div>
-
-    
-
-    <div class="container d-none d-sm-block search">
-        <div class="row justify-content-end">
-            <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
-                <form action="novedades" method="get" class="search">
-
-                    <label for="search" class="button-search">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </label>
-                    <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-
+    {{!-- INICIO TABLA --}}
     <table class="table table-striped">
         <thead class="thead">
             <tr>
-                <th scope="col" class="col-1">#
-                    <a href="/admin/novedades/asc"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-                    <a href="/admin/novedades"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                <th scope="col" class="col-1">
+                    {{#if orderDesc}}
+                    <a href="/admin/novedades/asc" id="orderById">Id</a>
+                    {{/if}}
+                    {{#if orderAsc}}
+                    <a href="/admin/novedades" id="orderById">Id</a>
+                    {{/if}}
+
                 </th>
                 <th scope="col" class="col-5">Título</i></th>
-                <th scope="col" class="col-5" >Fecha y Hora
-                    <a href="/admin/novedades/FHasc"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-                    <a href="/admin/novedades/FHdesc"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                <th scope="col" class="col-5">
+                    {{#if orderDesc}}
+                    <a href="/admin/novedades/asc" id="orderById">Fecha y Hora</a>
+                    {{/if}}
+
+                    {{#if orderAsc}}
+                    <a href="/admin/novedades" id="orderById">Fecha y Hora</a>
+                    {{/if}}
+
 
                 </th>
                 <th scope="col" class="acciones">Acciones</th>
@@ -109,7 +94,7 @@
 
         </tbody>
     </table>
-
+    {{!-- FIN TABLA --}}
 
     <div class="resultado">
         {{#if is_search}}
@@ -119,4 +104,3 @@
         {{/if}}
     </div>
 </main>
-
