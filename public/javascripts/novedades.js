@@ -29,7 +29,7 @@ function previewImage() {
     var reader = new FileReader();
     var fileToRead = document.getElementById('uploadImage').files[0];
 
-    
+
     reader.onload = function (e) {
         document.getElementById('uploadPreview').src = e.target.result;
     };
@@ -46,9 +46,10 @@ function previewImage() {
 };
 
 // LOADER
-function cargar(){
+function cargar() {
     document.getElementById("loader").style.display = "block";
 }
+
 
 
 
