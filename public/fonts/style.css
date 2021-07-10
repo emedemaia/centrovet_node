@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?861tgw');
-  src:  url('fonts/icomoon.eot?861tgw#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?861tgw') format('truetype'),
-    url('fonts/icomoon.woff?861tgw') format('woff'),
-    url('fonts/icomoon.svg?861tgw#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?dcrqhr');
+  src:  url('fonts/icomoon.eot?dcrqhr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dcrqhr') format('truetype'),
+    url('fonts/icomoon.woff?dcrqhr') format('woff'),
+    url('fonts/icomoon.svg?dcrqhr#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,23 +25,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-number2:before {
-  content: "\e906";
+.icon-moon-stars:before {
+  content: "\e90a";
 }
-.icon-number3:before {
-  content: "\e907";
+.icon-sun:before {
+  content: "\e90b";
 }
-.icon-number4:before {
-  content: "\e908";
-}
-.icon-number5:before {
-  content: "\e909";
-}
-.icon-number:before {
-  content: "\e904";
-}
-.icon-number1:before {
-  content: "\e905";
+.icon-sunset:before {
+  content: "\e90c";
 }
 .icon-mail1:before {
   content: "\e900";

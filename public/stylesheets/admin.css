@@ -72,14 +72,14 @@ footer {
 
 /* FIN FOOTER */
 
-
 #loader {
   border: 10px solid #F5C1DD;
   border-radius: 50%;
   border-top: 10px solid #83045e;
   width: 50px;
   height: 50px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
   animation: spin 2s linear infinite;
   position: fixed;
   top: 50%;
@@ -89,16 +89,24 @@ footer {
 }
 
 /* Safari */
+
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 /* COMIENZO FORMULARIO LOGIN */
 
@@ -185,12 +193,19 @@ input::placeholder {
   text-decoration: none;
 }
 
-.orden {
-  width: 95%;
-  margin: 0 auto;
+/* .meteored{
+  width: 100%;
   display: flex;
-  height: 40px;
+  justify-content: flex-start;
+  margin-left: 40px;
 }
+
+.meteored-widget{
+width: 141px;
+color: rgb(134, 134, 134);
+background-color: rgb(255, 255, 255);
+overflow: hidden;
+} */
 
 .boton {
   display: block;
@@ -245,6 +260,111 @@ input::placeholder {
   margin: 5px auto;
 }
 
+/*ICOMOON HEADING*/
+
+.icon-moon-stars:before {
+  font-family: 'icomoon';
+  font-size: 2em;
+  content: "\e90a";
+  -webkit-animation: titilar 2s linear;
+  -webkit-animation-iteration-count: 3;
+  animation: titilar 2s linear;
+  animation-iteration-count: 3;
+  display: inline-block;
+}
+
+@-webkit-keyframes titilar {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes titilar {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.icon-sun:before {
+  font-family: 'icomoon';
+  font-size: 2em;
+  content: "\e90b";
+  -webkit-animation: rotarSol 4s linear;
+  -webkit-animation-iteration-count: 2;
+  animation: rotarSol 4s linear;
+  animation-iteration-count: 2;
+  display: inline-block;
+}
+
+@-webkit-keyframes rotarSol {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotarSol {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.icon-sunset:before {
+  font-family: 'icomoon';
+  font-size: 2em;
+  content: "\e90c";-webkit-animation: sunset 4s linear;
+  -webkit-animation-iteration-count: 1;
+  animation: sunset 4s linear;
+  animation-iteration-count: 1;
+  display: inline-block;
+}
+
+@-webkit-keyframes sunset {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sunset {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*ICOMOON HEADING*/
+
 /*fin heading novedades*/
 
 /*tabla novedades*/
@@ -272,17 +392,15 @@ input::placeholder {
   color: white;
 }
 
-.fechahora{
+.fechahora {
   font-weight: 400;
 }
 
-.fa-arrow-up, .fa-arrow-down{
+.fa-arrow-up, .fa-arrow-down {
   margin: 0 3px;
   font-size: 0.8em;
-color: #F5C1DD;
-
+  color: #F5C1DD;
 }
-
 
 .acciones .fas {
   font-size: 1.2em;
@@ -336,20 +454,19 @@ color: #F5C1DD;
   color: #ccc;
 }
 
-
 .cargarImagen {
   margin: 10px auto;
   width: 80%;
 }
 
-.file-img{
-  color:lightseagreen;
+.file-img {
+  color: lightseagreen;
   font-weight: 600;
 }
 
-.img-preview{
-    max-width: 100%;
-    height:auto
+.img-preview {
+  max-width: 100%;
+  height: auto
 }
 
 input[type=file]::-webkit-file-upload-button {
@@ -411,7 +528,6 @@ input[type=file]::file-selector-button:active {
   margin-top: 30px;
 }
 
-
 /* fin agregar novedades */
 
 /* ICOMOON NOVEDADES */
@@ -432,46 +548,6 @@ input[type=file]::file-selector-button:active {
   color: #b3acae;
   margin-left: 0.5em;
   font-style: normal;
-}
-
-.icon-number:before {
-  font-family: 'icomoon';
-  content: "\e904";
-  color: #674e56;
-  position: relative;
-  top: 2px;
-}
-
-.icon-number1:before {
-  font-family: 'icomoon';
-  content: "\e905";
-  color: #674e56;
-  position: relative;
-  top: 2px;
-}
-
-.icon-number2:before {
-  font-family: 'icomoon';
-  content: "\e906";
-  color: #674e56;
-}
-
-.icon-number3:before {
-  font-family: 'icomoon';
-  content: "\e907";
-  color: #674e56;
-}
-
-.icon-number4:before {
-  font-family: 'icomoon';
-  content: "\e908";
-  color: #674e56;
-}
-
-.icon-number5:before {
-  font-family: 'icomoon';
-  content: "\e909";
-  color: #674e56;
 }
 
 /* ICOMOON NOVEDADES */
@@ -545,7 +621,6 @@ input[type=file]::file-selector-button:active {
 .imagen-novedad {
   display: flex;
   justify-content: center;
-
 }
 
 .img-modif {
@@ -553,14 +628,15 @@ input[type=file]::file-selector-button:active {
   max-width: 500px;
 }
 
-.img-modif-display{
+.img-modif-display {
   display: flex;
   margin: 20px 0;
 }
 
-.nueva-imagen{
+.nueva-imagen {
   margin-left: 30px;
 }
+
 hr {
   margin: 0;
   margin-bottom: 1em;
@@ -583,7 +659,6 @@ hr {
   margin-bottom: 20px;
 }
 
-
 .borrar {
   background-color: red;
   color: white;
@@ -604,6 +679,7 @@ hr {
   background-color: rgb(56, 6, 6);
   color: #ccc;
 }
+
 /* previsualizar novedades*/
 
 /* FIN NOVEDADES */
@@ -612,6 +688,23 @@ hr {
   .formulariologin {
     width: 60%;
   }
+  /*ICOMOON HEADING*/
+  .icon-moon-stars:before {
+    font-family: 'icomoon';
+    font-size: 3em;
+    content: "\e90a";
+  }
+  .icon-sun:before {
+    font-family: 'icomoon';
+    font-size: 3em;
+    content: "\e90b";
+  }
+  .icon-sunset:before {
+    font-family: 'icomoon';
+    font-size: 3em;
+    content: "\e90c";
+  }
+  /*ICOMOON HEADING*/
 }
 
 @media screen and (min-width: 720px) {

@@ -5,20 +5,23 @@ var hora = fecha.getHours();
 
 function horario(hora) {
     if (hora >= 6 && hora < 12) {
-
-        document.write('¡Buen día, ');
+     
+        document.write('<span class="icon-sun"></span>¡Buen día, ');
+     
     }
 
     else {
 
         if (hora >= 12 && hora <= 19) {
 
-            document.write('¡Buenas tardes, ');
+         
+            document.write('<span class="icon-sunset"></span>¡Buenas tardes, ');
+       ;
         }
 
         else {
 
-            document.write('¡Buenas noches, ');
+            document.write('<span class="icon-moon-stars"></span>¡Buenas noches, ');
 
         }
     }
