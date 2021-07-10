@@ -30,6 +30,7 @@
             </form>
         </div>
 
+{{#if search}}
         <div class="d-none d-sm-block">
             <form action="novedades" method="get" class="search">
 
@@ -40,6 +41,21 @@
 
             </form>
         </div>
+{{/if}}
+
+
+{{#if searchorder}}
+        <div class="d-none d-sm-block">
+            <form action="../novedades" method="get" class="search">
+
+                <label for="search" class="button-search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
+
+            </form>
+        </div>
+{{/if}}
 
         <div> <a href="/admin/novedades/agregar" class="nuevobtn btn-success"><i class="fas fa-plus"></i> Nuevo</a>
         </div>
