@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{!-- cache --}}
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Last-Modified" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+  <meta http-equiv="Pragma" content="no-cache">
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -23,46 +28,50 @@
   <!-- Bootstrap -->
 
   <!-- font-awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font-awesome -->
 
   <title>Centro.Vet - Hematología y Diagnóstico</title>
 
-  
-  {{!-- <link href="../../stylesheets/hamburgers.css" rel="stylesheet"> --}}
+
+  {{!--
+  <link href="../../stylesheets/hamburgers.css" rel="stylesheet"> --}}
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/ixl2yfw.css"> <!-- link fuente -->
   <link rel="stylesheet" href="../../../stylesheets/admin.css">
   <link rel="stylesheet" href="../../../stylesheets/normalize.css">
 
 
-<script src="../../../javascripts/novedades.js"></script>
+  <script src="../../../javascripts/novedades.js"></script>
 
 
 </head>
 
 <body>
-  
-  <header><a href="../../novedades" target="_blank"><img src="../../../images/centrovet-logo.png" alt="logo"></a></header>
+
+  <header><a href="../../novedades" target="_blank"><img src="../../../images/centrovet-logo.png" alt="logo"></a>
+  </header>
 
   {{{body}}}
-  
+
   <!-- INICIO FOOTER -->
   <footer>Diseñado y Desarrollado por Maia I. Elías &copy; - 2021</footer>
   <!-- FIN FOOTER -->
 
 
-  
- <script src="../../../javascripts/jquery-3.6.0.js"></script>
 
- <script src="../../../javascripts/jq-centrovet.js"></script>
- 
-{{!-- inicio TinyMCE editor --}}
-<script src="../../../tinymce/tinymce.min.js"></script>
-<script src="../../../javascripts/my-tinymce-config.js"></script>
-{{!--  fin TinyMCE editor --}}
- 
-    
+  <script src="../../../javascripts/jquery-3.6.0.js"></script>
+
+  <script src="../../../javascripts/jq-centrovet.js"></script>
+
+  {{!-- inicio TinyMCE editor --}}
+  <script src="../../../tinymce/tinymce.min.js"></script>
+  <script src="../../../javascripts/my-tinymce-config.js"></script>
+  {{!-- fin TinyMCE editor --}}
+
+
 </body>
 
 </html>
