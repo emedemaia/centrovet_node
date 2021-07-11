@@ -19,46 +19,61 @@
         <div>
             <h4>Novedades</h4>
         </div>
-        <div class="d-sm-none search">
-            <form action="novedades" method="get">
-
-                <label for="search" class="button-search">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </label>
-                <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
-
-            </form>
-        </div>
-
-{{#if search}}
-        <div class="d-none d-sm-block">
-            <form action="novedades" method="get" class="search">
-
-                <label for="search" class="button-search">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </label>
-                <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
-
-            </form>
-        </div>
-{{/if}}
 
 
-{{#if searchorder}}
-        <div class="d-none d-sm-block">
-            <form action="../novedades" method="get" class="search">
-
-                <label for="search" class="button-search">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </label>
-                <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}>
-
-            </form>
-        </div>
-{{/if}}
 
         <div> <a href="/admin/novedades/agregar" class="nuevobtn btn-success"><i class="fas fa-plus"></i> Nuevo</a>
         </div>
+    </div>
+
+    {{#if search}}
+    <div class="d-none d-sm-block search">
+        <form action="novedades" method="get">
+
+            <label for="search" class="button-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </label>
+            <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}
+                oninput="crossSearch()"></input>
+            <div class="cross-search">
+                <a href="/admin/novedades" class=" fa fa-times-circle" aria-hidden="true"
+                    id="cross-search"></a>
+            </div>
+
+            {{#if cross_search}}
+            <div class="cross-search-on">
+                <a href="/admin/novedades" class=" fa fa-times-circle" aria-hidden="true"
+                    id="cross-search-on"></a>
+            </div>
+            {{/if}}
+        </form>
+    </div>
+    {{/if}}
+
+
+    {{#if searchorder}}
+    <div class="d-none d-sm-block search">
+        <form action="../novedades" method="get">
+
+            <label for="search" class="button-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </label>
+            <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}"
+                {{/if}}oninput="crossSearch()"></input>
+            <a href="/admin/novedades" class="cross-search fa fa-times-circle" aria-hidden="true" id="cross-search"></a>
+        </form>
+    </div>
+    {{/if}}
+    <div class="d-sm-none search">
+        <form action="novedades" method="get">
+
+            <label for="search" class="button-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </label>
+            <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}
+                oninput="crossSearch()"></input>
+            <a href="/admin/novedades" class="cross-search fa fa-times-circle" aria-hidden="true" id="cross-search"></a>
+        </form>
     </div>
 
 

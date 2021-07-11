@@ -32,6 +32,7 @@ router.get('/', async function (req, res, next) {
         novedades,
         search:true,
         orderDesc:true,
+        cross_search: req.query.q !== undefined,
         is_search: req.query.q !== undefined,
         q: req.query.q
 

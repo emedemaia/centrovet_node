@@ -195,7 +195,7 @@ input::placeholder {
 
 .nuevobtn{
   position: relative;
-  top:9px;
+  top:0px;
 }
 
 
@@ -203,7 +203,8 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   width: 95%;
-  margin: 60px auto 10px;
+  margin: 60px auto 0px;
+
 }
 
 
@@ -235,10 +236,11 @@ input::placeholder {
 }
 
 .search {
+  width: 60%;
   margin: 0 auto;
-  position: relative;
-  bottom: 20px;
+  margin-bottom: 10px;
 }
+
 
 .button-search {
   position: relative;
@@ -250,11 +252,40 @@ input::placeholder {
   width: 100%;
   border-radius: 10px;
   border: 1px solid #ccc;
-  padding: 5px 23px 5px 30px;
+  padding: 5px 5px 5px 30px;
+  
 }
 
 .search input::placeholder {
   font-weight: 400;
+}
+
+.cross-search{
+  visibility: hidden;
+  position:relative;
+  bottom:29px;
+  left:230px;
+}
+
+.cross-search-on{
+  left: 215px;
+  position:relative;
+  bottom:29px;
+  left:212px;
+}
+
+
+.fa-times-circle{
+  color:#b3b3b3;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+.fa-times-circle:hover{
+  color: #555;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
 }
 
 .resultado {
@@ -691,11 +722,20 @@ hr {
   }
   /*ICOMOON HEADING*/
 
+  .search{
+    width: 50%;
+  }
+  
+  
 }
 
 @media screen and (min-width: 720px) {
 
-
+  .search{
+    width: 40%;
+   float: right;
+   margin-right: 30px;
+  }
  
   .formulariologin {
     width: 40%;
@@ -703,14 +743,16 @@ hr {
   .formulariologin input {
     width: 100%;
   }
-
+  
 
 }
 
 @media screen and (min-width: 960px) {
-  .search {
-    left: 73%;
+
+  .search{
+    width: 30%;
   }
+  
   .formulariologin {
     width: 30%;
   }
@@ -720,31 +762,25 @@ hr {
 }
 
 @media screen and (min-width: 1024px) {
-  .search {
-    left: 75%;
-  }
+  
   .formulariologin {
     width: 30%;
   }
 }
 
 @media screen and (min-width: 1140px) {
-  .search {
-    left: 73%;
+  .search{
+    width: 20%;
   }
 }
 
 @media screen and (min-width: 1260px) {
-  .search {
-    left: 90%;
-  }
+  
   .formulariologin {
     width: 20%;
   }
 }
 
 @media screen and (min-width: 1320px) {
-  .search {
-    left: 79%;
-  }
+  
 }

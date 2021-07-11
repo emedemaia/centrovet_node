@@ -105,8 +105,8 @@ async function getNovedadesFechaHoraAsc() {
 
 //buscador
 async function buscarNovedades(busqueda) {
-    var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, filename, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades where titulo like ? or autor like ? or cuerpo like ? or etiquetas like ? order by id desc";
-    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
+    var query = "select id,titulo,autor,cuerpo,etiquetas,imagenes, filename, DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') as fechahora from novedades where titulo like ? or autor like ? or cuerpo like ? or etiquetas like ? or DATE_FORMAT(fechahora, '%W %d %M %Y %H:%i') like ? order by id desc";
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
     return rows;
 }
 

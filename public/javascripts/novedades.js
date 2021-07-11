@@ -53,6 +53,10 @@ function cargar() {
     document.getElementById("loader").style.display = "block";
 }
 
+function crossSearch(){
+    document.getElementById("cross-search").style.visibility = "visible";
+    document.getElementById("cross-search-on").style.visibility = "hidden";
+}
 
 
 
