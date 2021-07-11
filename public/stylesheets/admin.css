@@ -136,18 +136,20 @@ input::placeholder {
 }
 
 .submit-login {
-  background-color: #83045e;
+  background-color: #ee9fc9;
   color: white;
   font-size: 0.9em;
-  padding: 10px 20px;
+  padding: 11px 20px;
   border-radius: 10px;
   border: 0;
+  transition: all 0.3s ease;
+  margin:0 10px;
 }
 
 .submit-login:hover {
-  background-color: #F5C1DD;
+  background-color: #cc869c;;
   color: #674e56;
-  transition: all 0.3s ease;
+ 
 }
 
 .submit-login:active {
@@ -461,23 +463,24 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .regresar {
-  background-color: #83045e;
+  background-color: #9D8189;
   color: white;
   font-size: 0.9em;
   padding: 10px 20px;
   border-radius: 10px;
   border: 0;
   text-decoration: none;
-}
-
-.regresar:hover {
-  background-color: #674e56;
-  color: white;
   transition: all 0.3s ease;
 }
 
-.regresar:active {
+.regresar:hover {
   background-color: #572937;
+  color: white;
+  
+}
+
+.regresar:active {
+  background-color: #674e56;
   color: #ccc;
 }
 
@@ -694,6 +697,7 @@ hr {
   border-radius: 10px;
   border: 0;
   text-decoration: none;
+  margin: 0 10px;
 }
 
 .borrar:hover {
