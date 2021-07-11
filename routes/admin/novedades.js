@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var novedadesModel = require('../../models/novedadesmodel')
 var multer = require('multer');
-// const fs = require('fs');
+const fs = require('fs');
 
 var storage = multer.diskStorage({
     destination: './public/images/uploads/',
@@ -298,12 +298,14 @@ router.get('/preview/:id', async (req, res, next) => {
 //para listar las fotos de la carpeta upload
 
 
-//     var filenames = fs.readdirSync('../images/uploads')
+    var filenames = fs.readdirSync('public/images/uploads')
 
-// console.log("\nCurrent directory filenames:");
-// filenames.forEach(file => {
-//     console.log(file);
-//   });
+console.log("\nCurrent directory filenames:");
+filenames.forEach(file => {
+    console.log(file);
+  });
+
+
 
 module.exports = router;
 
