@@ -238,7 +238,7 @@ input::placeholder {
 }
 
 .search {
-  width: 60%;
+  width: 350px;
   margin: 0 auto;
   margin-bottom: 10px;
 }
@@ -269,10 +269,23 @@ input::placeholder {
   left:230px;
 }
 
+.cross-search-xs{
+  visibility: hidden;
+  position:relative;
+  bottom:29px;
+  left:321px;
+}
+
 .cross-search-on{
   position:relative;
   bottom:29px;
   left:213px;
+}
+
+.cross-search-xs-on{
+  position:relative;
+  bottom:29px;
+  left:304px;
 }
 
 

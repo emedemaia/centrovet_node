@@ -4,8 +4,7 @@
 
 
         <div class="saludo">
-            <script> horario(hora);</script><span class="usuario-novedades">{{usuario}}!</span> ¿Qué novedades hay para
-            hoy?
+            <script> horario(hora);</script><span class="usuario-novedades">{{usuario}}!</span> 
         </div>
 
         <div class="cerrar">
@@ -43,6 +42,22 @@
             {{/if}}
         </form>
     </div>
+
+    <div class="d-sm-none search">
+        <form action="novedades" method="get">
+
+            <label for="search" class="button-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </label>
+            <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}} oninput="crossSearchXs()"></input>
+            <a href="/admin/novedades" class="cross-search-xs fa fa-times-circle" aria-hidden="true" id="cross-search-xs"></a>
+            {{#if cross_search}}
+            <a href="/admin/novedades" class="cross-search-xs-on fa fa-times-circle" aria-hidden="true"
+                id="cross-search-xs-on"></a>
+            {{/if}}
+        </form>
+    </div>
+
     {{/if}}
 
 
@@ -58,18 +73,26 @@
             <a href="/admin/novedades" class="cross-search fa fa-times-circle" aria-hidden="true" id="cross-search"></a>
         </form>
     </div>
-    {{/if}}
+
     <div class="d-sm-none search">
-        <form action="novedades" method="get">
+        <form action="../novedades" method="get">
 
             <label for="search" class="button-search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </label>
             <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}
                 oninput="crossSearch()"></input>
-            <a href="/admin/novedades" class="cross-search fa fa-times-circle" aria-hidden="true" id="cross-search"></a>
+            <a href="/admin/novedades" class="cross-search-xs fa fa-times-circle" aria-hidden="true" id="cross-search-xs"></a>
+
         </form>
     </div>
+    {{/if}}
+
+
+
+
+
+
 
 
 
@@ -107,7 +130,7 @@
             <tr>
                 <th scope="row">{{id}}</th>
                 <td><a href="/admin/novedades/preview/{{id}}" target="_blank">{{titulo}}</a></td>
-                <th scope="row" class="fechahora" >{{fechahora}} hs</th>
+                <th scope="row" class="fechahora">{{fechahora}} hs</th>
                 <td class="acciones">
 
                     <a href="/admin/novedades/modificar/{{id}}"><i class="fas fa-edit"></i></a>

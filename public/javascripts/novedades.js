@@ -58,6 +58,11 @@ function crossSearch(){
     document.getElementById("cross-search-on").style.visibility = "hidden";
 }
 
+function crossSearchXs(){
+    document.getElementById("cross-search-xs").style.visibility = "visible";
+    document.getElementById("cross-search-xs-on").style.visibility = "hidden";
+}
+
 
 
 
