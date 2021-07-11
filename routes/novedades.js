@@ -8,7 +8,7 @@ router.get('/', async function (req, res, next) {
 
   if (req.query.q === undefined){
     var mx = await novedadesModel.getNovedadesMX();
-  var novedades = await novedadesModel.getNovedadesFechaHora();
+  var novedades = await novedadesModel.getNovedadesFechaHoraFront();
   
   }else{
     var mx = await novedadesModel.getNovedadesMX();

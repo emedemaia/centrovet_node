@@ -35,16 +35,11 @@
             </label>
             <input type="search" id="search" placeholder="Buscar" name="q" {{#if q}}value="{{q}}" {{/if}}
                 oninput="crossSearch()"></input>
-            <div class="cross-search">
-                <a href="/admin/novedades" class=" fa fa-times-circle" aria-hidden="true"
-                    id="cross-search"></a>
-            </div>
 
+            <a href="/admin/novedades" class="cross-search fa fa-times-circle" aria-hidden="true" id="cross-search"></a>
             {{#if cross_search}}
-            <div class="cross-search-on">
-                <a href="/admin/novedades" class=" fa fa-times-circle" aria-hidden="true"
-                    id="cross-search-on"></a>
-            </div>
+            <a href="/admin/novedades" class="cross-search-on fa fa-times-circle" aria-hidden="true"
+                id="cross-search-on"></a>
             {{/if}}
         </form>
     </div>
@@ -80,7 +75,7 @@
 
 
     {{!-- INICIO TABLA --}}
-    <table class="table table-striped">
+    <table class="table table-striped" {{tabla}}>
         <thead class="thead">
             <tr>
                 <th scope="col" class="col-1">
@@ -112,7 +107,7 @@
             <tr>
                 <th scope="row">{{id}}</th>
                 <td><a href="/admin/novedades/preview/{{id}}" target="_blank">{{titulo}}</a></td>
-                <th scope="row" class="fechahora">{{fechahora}} hs</th>
+                <th scope="row" class="fechahora" >{{fechahora}} hs</th>
                 <td class="acciones">
 
                     <a href="/admin/novedades/modificar/{{id}}"><i class="fas fa-edit"></i></a>

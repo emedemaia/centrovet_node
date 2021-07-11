@@ -42,13 +42,14 @@ router.get('/', async function (req, res, next) {
 
 //novedades ascendente
 router.get('/asc', async function (req, res, next) {
-    
+    var mx = await novedadesModel.getNovedadesMX();
     var novedades = await novedadesModel.getNovedadesFechaHoraIdAsc();
 
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
         searchorder:true,
+        mx,
         novedades,
         orderAsc:true,
     });
@@ -58,12 +59,14 @@ router.get('/asc', async function (req, res, next) {
 
 //novedades ordenadas por fechahora ascendente y desdendente
 router.get('/fhasc', async function (req, res, next) {
+    var mx = await novedadesModel.getNovedadesMX();
     var novedades = await novedadesModel.getNovedadesFechaHoraAsc();
 
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
         searchorder:true,
+        mx,
         novedades,
         orderAsc:true,
     });
@@ -71,12 +74,14 @@ router.get('/fhasc', async function (req, res, next) {
 });
 
 router.get('/fhdesc', async function (req, res, next) {
+    var mx = await novedadesModel.getNovedadesMX();
     var novedades = await novedadesModel.getNovedadesFechaHoraDesc();
 
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
         searchorder:true,
+        mx,
         novedades,
         orderDesc:true,
     });
