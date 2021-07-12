@@ -72,42 +72,6 @@ footer {
 
 /* FIN FOOTER */
 
-#loader {
-  border: 10px solid #F5C1DD;
-  border-radius: 50%;
-  border-top: 10px solid #83045e;
-  width: 50px;
-  height: 50px;
-  -webkit-animation: spin 2s linear infinite;
-  /* Safari */
-  animation: spin 2s linear infinite;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: +1;
-  display: none;
-}
-
-/* Safari */
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /* COMIENZO FORMULARIO LOGIN */
 
 .formulariologin {

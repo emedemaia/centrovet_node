@@ -19,4 +19,17 @@ function botonabajo() {
     botonera.classList.toggle('navabierto');
 }
 
+//loader
 
+function cargar() {
+    var name = document.getElementById('name')
+    var email = document.getElementById('email')
+    var asunto = document.getElementById('asunto')
+    var comentario = document.getElementById('comentario')
+
+    if (name.value !="" && email.value !="" && asunto.value !="" && comentario.value !=""){
+    document.getElementById("loader").style.display = "block";
+}else{ 
+console.log('Debe llenar el formulario')
+}
+}
