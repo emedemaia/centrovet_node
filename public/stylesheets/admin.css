@@ -690,6 +690,34 @@ hr {
 
 /* previsualizar novedades*/
 
+/* Images uploads */
+.imagesuploads{
+  display: flex;
+  justify-content:space-evenly;
+  flex-wrap: wrap;
+}
+
+.imagesuploadschilds{
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.imagesupl{
+ position: relative;
+ bottom: 10%;
+right: 50%;
+  
+}
+
+.borrarimage{
+  position: relative;
+  top:10px;
+  z-index: +2;
+}
+/* Images uploads */
+
 /* FIN NOVEDADES */
 
 @media screen and (min-width: 576px) {

@@ -6,7 +6,7 @@
 
         <input type="hidden" value="{{novedad.id}}" name="id">
         <p>
-            <textarea id="titulo" placeholder="Título" name="titulo" rows="1">{{novedad.titulo}}</textarea>
+            <textarea id="titulo" placeholder="Título" name="titulo" rows="1" class="inputs" required>{{novedad.titulo}}</textarea>
         </p>
 
         <p>
@@ -56,7 +56,7 @@
 
         <label for="etiquetas">Hashtags:</label><br />
         <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="hashtags"
-            value={{novedad.etiquetas}}>{{novedad.etiquetas}}</textarea>
+            value={{novedad.etiquetas}} class="inputs" required>{{novedad.etiquetas}}</textarea>
         </p>
 
         {{#if error}}
@@ -64,7 +64,7 @@
             {{message}}
         </p>
         {{/if}}
-        <button class="submit-login" type="submit" onclick="cargar()">Actualizar</button>
+        <button class="submit-login" type="submit" id="buttonsubmit">Actualizar</button>
         <a class="regresar" href="/admin/novedades">Volver</a>
     </form>
 

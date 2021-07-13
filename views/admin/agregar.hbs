@@ -7,7 +7,7 @@
         <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
 
             <p>
-                <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic" required></textarea>
+                <textarea name="titulo" placeholder="Título" id="titulo" rows="1" class="tituloartic inputs" required></textarea>
             </p>
 
             <p>
@@ -38,7 +38,7 @@
 
             <p>
                 <label for="etiquetas">Hashtags:</label><br />
-                <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags" required></textarea>
+                <textarea name="etiquetas" id="etiquetas" cols="30" rows="1" placeholder="Ingresar hashtags" class="inputs" required></textarea>
             </p>
 
 
@@ -46,9 +46,10 @@
            <script> window.alert("No se cargó la novedad. Volvé a intentar")</script>
             {{/if}}
 
-            <button class="submit-login" type="submit" onclick="cargar();">Grabar</button>
+            <button class="submit-login" type="submit" id="buttonsubmit">Grabar</button>
             <a class="regresar" href="/admin/novedades">Volver</a>
         </form>
+       
     </div>
 
 

@@ -21,15 +21,27 @@ function botonabajo() {
 
 //loader
 
-function cargar() {
-    var name = document.getElementById('name')
-    var email = document.getElementById('email')
-    var asunto = document.getElementById('asunto')
-    var comentario = document.getElementById('comentario')
 
-    if (name.value !="" && email.value !="" && asunto.value !="" && comentario.value !=""){
+   
+
+var inputs = document.getElementsByClassName('inputs');
+
+    for (var i = 0 ; i < inputs.length; i++){
+
+        inputs[i].addEventListener('change', function(){
+
+        var buttonsubmit = document.getElementById('buttonsubmit');
+
+        var att = document.createAttribute('onclick');
+        att.value = 'cargar()';
+
+        buttonsubmit.setAttributeNode(att);
+    });
+}
+    
+
+
+function cargar(){
     document.getElementById("loader").style.display = "block";
-}else{ 
-console.log('Debe llenar el formulario')
 }
-}
+

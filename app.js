@@ -13,7 +13,7 @@ var novedadesRouter = require('./routes/novedades');
 var galeriaRouter = require('./routes/galeria');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
-
+var imagenesuploadsRoutes = require('./routes/admin/novedades');
 
 var app = express();
 
@@ -61,6 +61,7 @@ app.use('/novedades', novedadesRouter);
 app.use('/galeria', galeriaRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
+app.use('/admin/imagenesuploads', secured, imagenesuploadsRoutes);
 
 
 

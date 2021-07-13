@@ -157,7 +157,7 @@ router.post('/agregar', upload.single('images'), async (req, res, next) => {
                 res.render('admin/agregar', {
                     layout: 'admin/layout',
                     error: true,
-                    message: 'Todos los campos (excepto imágenes) son requeridos'
+               
                 });
             }
         }
@@ -296,16 +296,46 @@ router.get('/preview/:id', async (req, res, next) => {
 
 
 //para listar las fotos de la carpeta upload
+router.get('/imagenesuploads', async (req,res,next)=>{
 
+    var filenames = await fs.readdirSync('public/images/uploads')
 
-    var filenames = fs.readdirSync('public/images/uploads')
 
 console.log("\nCurrent directory filenames:");
+console.log(filenames)
+
 filenames.forEach(file => {
     console.log(file);
+    
   });
 
+  
 
+  res.render('admin/imagenesuploads',{
+      layout:'admin/layout',
+      filenames
+      
+  })
+
+})
+
+// ; async () => {
+   
+
+//     var filenames = await fs.readdirSync('public/images/uploads')
+//     try {
+//       await fs.unlink('imagen')
+//       console.log('File removed')
+
+// res.render('admin/imagenesuploads',{
+//     layout:'admin/layout',
+//     filenames
+// })
+
+//     } catch(err) {
+//       console.error('Something wrong happened removing the file', err)
+//     }
+//   }
 
 module.exports = router;
 
