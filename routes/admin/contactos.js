@@ -19,11 +19,19 @@ console.log(contactos)
 router.get('/eliminar/:id', async (req, res, next)=>{
 var id = req.params.id;
   await contactosModel.deleteContactosById(id);
-console.log(contactos)
+
 
     res.redirect('/admin/contactos')
 
 })
 
+
+
+// para eliminar una novedad
+router.get('/eliminar/:id', async (req, res, next) => {
+    var id = req.params.id;
+    await novedadesModel.deleteNovedadById(id);
+    res.redirect('/admin/novedades')
+});
 
 module.exports = router;
