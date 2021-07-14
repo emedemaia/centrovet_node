@@ -30,8 +30,9 @@ router.get('/', async function (req, res, next) {
         usuario: req.session.nombre,
         mx,
         novedades,
-        search:true,
-        orderDesc:true,
+        navbar: true,
+        search: true,
+        orderDesc: true,
         cross_search: req.query.q !== undefined,
         is_search: req.query.q !== undefined,
         q: req.query.q
@@ -48,10 +49,11 @@ router.get('/asc', async function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        searchorder:true,
+        searchorder: true,
+        navbar: true,
         mx,
         novedades,
-        orderAsc:true,
+        orderAsc: true,
     });
 
 });
@@ -65,10 +67,11 @@ router.get('/fhasc', async function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        searchorder:true,
+        searchorder: true,
+        navbar: true,
         mx,
         novedades,
-        orderAsc:true,
+        orderAsc: true,
     });
 
 });
@@ -80,10 +83,11 @@ router.get('/fhdesc', async function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        searchorder:true,
+        searchorder: true,
+        navbar: true,
         mx,
         novedades,
-        orderDesc:true,
+        orderDesc: true,
     });
 
 });
@@ -157,7 +161,7 @@ router.post('/agregar', upload.single('images'), async (req, res, next) => {
                 res.render('admin/agregar', {
                     layout: 'admin/layout',
                     error: true,
-               
+
                 });
             }
         }
@@ -188,14 +192,14 @@ router.get('/eliminar/:id', async (req, res, next) => {
 router.get('/modificar/:id', async (req, res, next) => {
     var id = req.params.id;
     var novedad = await novedadesModel.getNovedadById(id);
-    
-    if(novedad.imagenes != ""){
-    res.render('admin/modificar', {
-        layout: 'admin/layout',
-        novedad,
-        previewModif: true
-    })
-    }else{
+
+    if (novedad.imagenes != "") {
+        res.render('admin/modificar', {
+            layout: 'admin/layout',
+            novedad,
+            previewModif: true
+        })
+    } else {
         res.render('admin/modificar', {
             layout: 'admin/layout',
             novedad,
@@ -296,46 +300,63 @@ router.get('/preview/:id', async (req, res, next) => {
 
 
 //para listar las fotos de la carpeta upload
-router.get('/imagenesuploads', async (req,res,next)=>{
+router.get('/imagenesuploads', async (req, res, next) => {
 
     var filenames = await fs.readdirSync('public/images/uploads')
 
 
-console.log("\nCurrent directory filenames:");
-console.log(filenames)
+    console.log("\nCurrent directory filenames:");
+    console.log(filenames)
 
-filenames.forEach(file => {
-    console.log(file);
-    
-  });
+    filenames.forEach(file => {
+        console.log(file);
 
-  
+    });
+    res.render('admin/imagenesuploads', {
+        layout: 'admin/layout',
+        filenames
 
-  res.render('admin/imagenesuploads',{
-      layout:'admin/layout',
-      filenames
-      
-  })
+    })
 
 })
 
-// ; async () => {
-   
 
-//     var filenames = await fs.readdirSync('public/images/uploads')
-//     try {
-//       await fs.unlink('imagen')
-//       console.log('File removed')
+// router.get('/eliminar/:this', (req, res, next) => {
 
-// res.render('admin/imagenesuploads',{
-//     layout:'admin/layout',
-//     filenames
+
+//    fs.unlink("./public/images/uploads/"+req.file.filename, (err) => {
+//         if (err) {
+//             console.log("failed to delete local image:"+err);
+//         } else {
+//             console.log('successfully deleted local image');                                
+//         }
+//     });
+    // try {
+    //     var deleteimage = req.params.this
+
+    //     await fs.unlink(deleteimage[this]);
+    //     console.log('File removed')
+
+    //     res.redirect('/admin/imagenesuploads', {
+    //         layout: 'admin/layout',
+    //         filenames
+    //     });
+
+    // } catch (err) {
+    //     console.error('Something wrong happened removing the file', err)
+    // }
 // })
 
-//     } catch(err) {
-//       console.error('Something wrong happened removing the file', err)
-//     }
-//   }
+
+// para eliminar una novedad
+router.get('/eliminar/:id', async (req, res, next) => {
+    var id = req.params.id;
+    await novedadesModel.deleteNovedadById(id);
+    res.redirect('/admin/novedades')
+});
+
+
+
 
 module.exports = router;
 

@@ -1,0 +1,47 @@
+<main>
+
+
+
+
+    <div class="nuevo">
+        <div>
+            <h4>Contactos</h4>
+        </div>
+    </div>
+
+
+    {{!-- INICIO TABLA --}}
+    <table class="table table-striped">
+        <thead class="thead">
+            <tr>
+                <th scope="col" class="col-1">Id</th>
+                <th scope="col" class="col-3">Nombre y Apellido</i></th>
+                <th scope="col" class="col-2">Email</th>
+                <th scope="col" class="col-2">Teléfono</th>
+                <th scope="col" class="col-3">Dirección</th>
+                <th scope="col" class="acciones">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each contactos}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td scope="row">{{nombre}}</td>
+                <th scope="row">{{email}}</th>
+                <th scope="row">{{tel}}</th>
+                <th scope="row">{{dir}}</th>
+                <td class="acciones">
+
+                    <a href="/admin/contactos/eliminar/{{id}}"><i class="fas fa-trash-alt"
+                            onclick="return confirm('¿Estás seguro que quieres eliminar este contacto?')"></i></a>
+
+                </td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+    {{!-- FIN TABLA --}}
+
+
+</main>

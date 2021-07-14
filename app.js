@@ -14,6 +14,7 @@ var galeriaRouter = require('./routes/galeria');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
 var imagenesuploadsRoutes = require('./routes/admin/novedades');
+var contactosRouter = require('./routes/admin/contactos')
 
 var app = express();
 
@@ -62,9 +63,7 @@ app.use('/galeria', galeriaRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
 app.use('/admin/imagenesuploads', secured, imagenesuploadsRoutes);
-
-
-
+app.use('/admin/contactos', secured, contactosRouter);
 
 
 // catch 404 and forward to error handler

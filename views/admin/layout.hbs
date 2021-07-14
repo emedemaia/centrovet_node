@@ -47,13 +47,32 @@
 
 <body>
 
+
+
+
   <header><a href="../../novedades" target="_blank"><img src="../../../images/centrovet-logo.png" alt="logo"></a>
   </header>
+
+
+
+   {{#if navbar}}
+<div class="navbar">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link {{#if novedades}}active{{/if}}" aria-current="page" href="novedades">Novedades</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{#if contactos}}active{{/if}}" href="contactos">Contactos</a>
+  </li>
+</ul>
+</div>
+{{/if}}
+
 
   {{{body}}}
 
   <!-- INICIO FOOTER -->
-  <footer>Diseñado y Desarrollado por Maia I. Elías &copy; - 2021</footer>
+  <footer>Desarrollado por Maia I. Elías &copy; - 2021</footer>
   <!-- FIN FOOTER -->
 
 
