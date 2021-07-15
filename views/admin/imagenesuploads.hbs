@@ -3,9 +3,9 @@
 <div class="imagesuploads">
 {{#each filenames}}
 <div class="imagesuploadschilds">
-    <a class="borrar borrarimage" href="/admin/novedades/eliminar/{{this}}" onclick="return confirm('¿Estás seguro que quieres eliminar esta imagen? Esta acción no se puede deshacer')">Borrar</a>
+    <a class="borrar borrarimage" href="/admin/novedades/eliminarimagen/{{this}}" onclick="return confirm('¿Estás seguro que quieres eliminar esta imagen? Esta acción no se puede deshacer')">Borrar</a>
 <a href="../../images/uploads/{{this}}">
-<img src="../../images/uploads/{{this}}" alt="uploads" width="500" class="imagesupl" name="imagen">
+<img src="../../images/uploads/{{this}}" alt="uploads" width="500" class="imagesupl" name="imagen" >
 </a>
 
 </div>

@@ -220,11 +220,10 @@ router.post('/modificar', upload.single('images'), async (req, res, next) => {
         var cuerpo = req.body.cuerpo;
         var etiquetas = req.body.etiquetas;
         var imagenes = req.body.imagenes;
-
-
-        // console.log(imagenes)
+        
 
         if (titulo != "" && autor != "" && cuerpo != "" && etiquetas != "" && imagenes != "") {
+
             var obj = {
                 titulo: req.body.titulo,
                 autor: req.body.autor,
@@ -236,6 +235,8 @@ router.post('/modificar', upload.single('images'), async (req, res, next) => {
 
 
             await novedadesModel.modificarNovedadById(obj, req.body.id);
+
+            
             res.redirect('/admin/novedades');
 
             console.log(obj, 'con img');
@@ -321,31 +322,28 @@ router.get('/imagenesuploads', async (req, res, next) => {
 })
 
 
-// router.get('/eliminar/:this', (req, res, next) => {
+
+router.get('/eliminarimagen/:this', async (req, res, next) => {
+
+    console.log('entrando a eliminar img')
+  
+        var imagen = req.params.this
+        console.log(imagen);
+
+        await fs.unlink('public/images/uploads/' + imagen, err=>{
+            if (err) {console.log(err);
 
 
-//    fs.unlink("./public/images/uploads/"+req.file.filename, (err) => {
-//         if (err) {
-//             console.log("failed to delete local image:"+err);
-//         } else {
-//             console.log('successfully deleted local image');                                
-//         }
-//     });
-    // try {
-    //     var deleteimage = req.params.this
+            }else {
+              console.log('\nDeleted file:' + imagen);
+              console.log('File removed')
 
-    //     await fs.unlink(deleteimage[this]);
-    //     console.log('File removed')
+            }
+        });
+       
+        res.redirect('/admin/novedades/imagenesuploads')
 
-    //     res.redirect('/admin/imagenesuploads', {
-    //         layout: 'admin/layout',
-    //         filenames
-    //     });
-
-    // } catch (err) {
-    //     console.error('Something wrong happened removing the file', err)
-    // }
-// })
+})
 
 
 // para eliminar una novedad
