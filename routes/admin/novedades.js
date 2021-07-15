@@ -3,11 +3,17 @@ var router = express.Router();
 var novedadesModel = require('../../models/novedadesmodel')
 var multer = require('multer');
 const fs = require('fs');
+const path = require('path')
+const mime = require('mime')
 
 var storage = multer.diskStorage({
     destination: './public/images/uploads/',
     filename: function (req, file, cb) {
-        cb(null, file.originalname)
+        let ext = path.extname(file.originalname);
+        ext = ext.length > 1 ? ext : '.' + mime.extension(file.mimetype);
+        var sufijo = Date.now();
+        cb(null, file.fieldname + sufijo + ext)
+      
     }
 });
 
